@@ -1,0 +1,7 @@
+dump -file ./vcd_dump/dump.vpd
+dump -add tb_AES
+dump -autoflush on
+dump -deltaCycle on
+dump -forceEvent on
+run
+exit
