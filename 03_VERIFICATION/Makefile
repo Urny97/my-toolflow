@@ -9,9 +9,10 @@ design_name = AES
 base_dir = $(abspath ..)
 
 test_dir = $(abspath ../99_SRC/test_benches)
+src_dir = $(abspath ../99_SRC/my_src_hdl)
 synth_dir = $(abspath ../02_SYNTHESIS/data)
 tech_dir = $(abspath ../99_SRC/technology/NCSU-FreePDK45-1.4/FreePDK45/osu_soc/lib/files)
-test_bench = tb_AES
+test_bench = AES128_tb
 test_program = AES
 
 verilog = TRUE
@@ -38,6 +39,7 @@ read_files:
 	find $(tech_dir) -name '*.vhd' >> vhdl_file_list
 	find $(synth_dir) -name '*.vhd' >> vhdl_file_list
 	find $(test_dir) -name '*.vhd' >> vhdl_file_list
+	find $(src_dir) -name 'PKG_AES128.vhd' >> vhdl_file_list
 
 	find $(tech_dir) -name '*.v' >> verilog_file_list
 	find $(synth_dir) -name '*.v' >> verilog_file_list
