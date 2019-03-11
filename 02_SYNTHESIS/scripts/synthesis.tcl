@@ -209,10 +209,10 @@ set compile_filter_prune_seq_cells false
 # ------------------------------------------------------------------------------
 
 # Ultimate compile (does more and longer optimizations to gain an extra 10% at the cost of a factor 2 (at least) computation time)
-compile_ultra -no_autoungroup 
+#compile_ultra -no_autoungroup 
 
 # Normal (faster compile)
-#compile
+compile
 
 # ------------------------------------------------------------------------------
 # Change names before output
