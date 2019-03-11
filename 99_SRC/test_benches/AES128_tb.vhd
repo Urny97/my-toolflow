@@ -42,7 +42,7 @@ begin
     variable v_separator: character;
     variable v_temp : STD_LOGIC_VECTOR(127 downto 0);
   begin
-    file_open(fh_TESTVECTORS, "tv_output.txt", read_mode);
+    file_open(fh_TESTVECTORS, "../99_SRC/test_benches/tv_output.txt", read_mode);
     v_i := 0;
     while not endfile(fh_TESTVECTORS) loop      
       readline(fh_TESTVECTORS, v_lineIn);

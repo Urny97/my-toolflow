@@ -1,0 +1,49 @@
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : AES128
+Version: M-2016.12-SP2
+Date   : Sun Mar 10 17:39:53 2019
+****************************************
+
+
+Library(s) Used:
+
+    gscl45nm (File: /users/students/r0622838/digital-design-flow-aes/99_SRC/technology/NCSU-FreePDK45-1.4/FreePDK45/osu_soc/lib/files/gscl45nm.db)
+
+
+Operating Conditions: typical   Library: gscl45nm
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 1.1  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+  Cell Internal Power  = 851.646973 uW   (85%)
+  Net Switching Power  = 152.908646 uW   (15%)
+                         ---------
+Total Dynamic Power    = 1.004556 mW  (100%)
+
+Cell Leakage Power     = 237.2495 uW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad           0.000000          0.000000          0.000000          0.000000  (   0.00%)
+memory           0.000000          0.000000          0.000000          0.000000  (   0.00%)
+black_box        0.000000          0.000000          0.000000          0.000000  (   0.00%)
+clock_network    0.000000          0.000000          0.000000          0.000000  (   0.00%)
+register         0.664641        1.709299e-03        5.637014e+04          0.722721 (  58.20%)
+sequential     1.305581e-04        1.005615e-05         73.509903        2.141241e-04 (   0.02%)
+combinational    0.186876          0.151189        1.808058e+05          0.518871 (  41.78%)
+--------------------------------------------------------------------------------------------------
+Total            0.851647 mW       0.152909 mW     2.372495e+05 nW       1.241806 mW
+1

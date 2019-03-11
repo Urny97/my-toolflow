@@ -1,0 +1,296 @@
+{
+    "SdfDummyMod": [
+        "SdfDummyMod",
+        "hsqE0",
+        "module",
+        1
+    ],
+    "ByteSub_14": [
+        "ByteSub_14",
+        "e2G14",
+        "module",
+        28
+    ],
+    "AOI22X1": [
+        "AOI22X1",
+        "hvhdv",
+        "module",
+        13
+    ],
+    "ByteSub_4": [
+        "ByteSub_4",
+        "Dpe4M",
+        "module",
+        38
+    ],
+    "ByteSub_8": [
+        "ByteSub_8",
+        "Ne9hY",
+        "module",
+        34
+    ],
+    "Keyscheduler": [
+        "Keyscheduler",
+        "ump7n",
+        "module",
+        4
+    ],
+    "MUX2X1": [
+        "MUX2X1",
+        "kJR9E",
+        "module",
+        19
+    ],
+    "HAX1": [
+        "HAX1",
+        "rj18v",
+        "module",
+        25
+    ],
+    "ByteSub_10": [
+        "ByteSub_10",
+        "whQNs",
+        "module",
+        32
+    ],
+    "NOR3X1": [
+        "NOR3X1",
+        "DY4ye",
+        "module",
+        10
+    ],
+    "ShiftRow": [
+        "ShiftRow",
+        "gvwkH",
+        "module",
+        43
+    ],
+    "MHDL_VL_TOP": [
+        "MHDL_VL_TOP",
+        "kjsb5",
+        "module",
+        2
+    ],
+    "AES128": [
+        "AES128",
+        "IThLZ",
+        "module",
+        3
+    ],
+    "DFFSR": [
+        "DFFSR",
+        "WwkA0",
+        "module",
+        18
+    ],
+    "ByteSub_19": [
+        "ByteSub_19",
+        "H64UF",
+        "module",
+        5
+    ],
+    "AND2X2": [
+        "AND2X2",
+        "deaHL",
+        "module",
+        45
+    ],
+    "AOI21X1": [
+        "AOI21X1",
+        "MABjN",
+        "module",
+        12
+    ],
+    "ByteSub_7": [
+        "ByteSub_7",
+        "dZg1i",
+        "module",
+        35
+    ],
+    "AND2X1": [
+        "AND2X1",
+        "Gq2yN",
+        "module",
+        6
+    ],
+    "ByteSub_15": [
+        "ByteSub_15",
+        "WFiLy",
+        "module",
+        27
+    ],
+    "OAI21X1": [
+        "OAI21X1",
+        "EivVh",
+        "module",
+        14
+    ],
+    "INVX1": [
+        "INVX1",
+        "wDCMR",
+        "module",
+        8
+    ],
+    "...MASTER...": [
+        "SIM",
+        "amcQw",
+        "module",
+        46
+    ],
+    "MixColumn": [
+        "MixColumn",
+        "TgPQW",
+        "module",
+        44
+    ],
+    "OR2X1": [
+        "OR2X1",
+        "YRkbh",
+        "module",
+        7
+    ],
+    "Control_FSM": [
+        "Control_FSM",
+        "babwy",
+        "module",
+        22
+    ],
+    "ByteSub_0": [
+        "ByteSub_0",
+        "wvwxn",
+        "module",
+        42
+    ],
+    "BUFX2": [
+        "BUFX2",
+        "rBTwr",
+        "module",
+        9
+    ],
+    "NAND3X1": [
+        "NAND3X1",
+        "n5kPb",
+        "module",
+        11
+    ],
+    "LATCH": [
+        "LATCH",
+        "z6vG1",
+        "module",
+        23
+    ],
+    "ByteSub_18": [
+        "ByteSub_18",
+        "Pmv2C",
+        "module",
+        15
+    ],
+    "ByteSub_17": [
+        "ByteSub_17",
+        "RGNh8",
+        "module",
+        16
+    ],
+    "ByteSub_6": [
+        "ByteSub_6",
+        "BdQhm",
+        "module",
+        36
+    ],
+    "ByteSub_16": [
+        "ByteSub_16",
+        "cKzP7",
+        "module",
+        17
+    ],
+    "ByteSub_1": [
+        "ByteSub_1",
+        "CkFGN",
+        "module",
+        41
+    ],
+    "XNOR2X1": [
+        "XNOR2X1",
+        "nGFzt",
+        "module",
+        20
+    ],
+    "FAX1": [
+        "FAX1",
+        "fsx9c",
+        "module",
+        21
+    ],
+    "SubBytes": [
+        "SubBytes",
+        "wKFyy",
+        "module",
+        26
+    ],
+    "AddRoundKey": [
+        "AddRoundKey",
+        "QLaia",
+        "module",
+        24
+    ],
+    "ByteSub_3": [
+        "ByteSub_3",
+        "bSNFi",
+        "module",
+        39
+    ],
+    "ByteSub_13": [
+        "ByteSub_13",
+        "nAuHv",
+        "module",
+        29
+    ],
+    "ByteSub_12": [
+        "ByteSub_12",
+        "jt41y",
+        "module",
+        30
+    ],
+    "ByteSub_11": [
+        "ByteSub_11",
+        "NLFua",
+        "module",
+        31
+    ],
+    "ByteSub_9": [
+        "ByteSub_9",
+        "gzVK3",
+        "module",
+        33
+    ],
+    "ByteSub_5": [
+        "ByteSub_5",
+        "PzTU8",
+        "module",
+        37
+    ],
+    "ByteSub_2": [
+        "ByteSub_2",
+        "Rf8Da",
+        "module",
+        40
+    ],
+    "udp_dff": [
+        "udp_dff",
+        "exIG1",
+        "udp",
+        47
+    ],
+    "udp_mux2": [
+        "udp_mux2",
+        "U7Vwg",
+        "udp",
+        48
+    ],
+    "udp_tlat": [
+        "udp_tlat",
+        "gSqMj",
+        "udp",
+        49
+    ]
+}

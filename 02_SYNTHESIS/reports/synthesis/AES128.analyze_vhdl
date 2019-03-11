@@ -1,0 +1,20 @@
+Running PRESTO HDLC
+Compiling Entity Declaration ADDROUNDKEY
+Compiling Architecture ADDROUNDKEY_ARCH of ADDROUNDKEY
+Compiling Entity Declaration AES128
+Compiling Architecture BEHAVIORAL of AES128
+Compiling Entity Declaration BYTESUB
+Compiling Architecture INTERNALS of BYTESUB
+Compiling Entity Declaration CONTROL_FSM
+Compiling Architecture BEHAVIOURAL of CONTROL_FSM
+Compiling Entity Declaration KEYSCHEDULER
+Compiling Architecture BEHAVIORAL of KEYSCHEDULER
+Compiling Entity Declaration MIXCOLUMN
+Compiling Architecture MIXCOLUMN_ARCH of MIXCOLUMN
+Compiling Entity Declaration SHIFTROW
+Compiling Architecture SHIFTROW_ARCH of SHIFTROW
+Compiling Entity Declaration SUBBYTES
+Compiling Architecture BEHAVIOURAL of SUBBYTES
+Presto compilation completed successfully.
+Loading db file '/esat/micas-data/software/synopsys_2016.12/libraries/syn/dw_foundation.sldb'
+1

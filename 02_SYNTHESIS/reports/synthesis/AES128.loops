@@ -1,0 +1,15 @@
+ 
+****************************************
+Report : timing
+        -loops
+        -max_paths 1
+Design : AES128
+Version: M-2016.12-SP2
+Date   : Sun Mar 10 17:39:52 2019
+****************************************
+
+Operating Conditions: typical   Library: gscl45nm
+Wire Load Model Mode: top
+No loops.
+
+1

@@ -1,0 +1,257 @@
+ 
+****************************************
+Report : hierarchy
+Design : AES128
+Version: M-2016.12-SP2
+Date   : Sun Mar 10 17:39:53 2019
+****************************************
+
+Attributes:
+    r - licensed design
+
+AES128
+    AND2X1                  gscl45nm
+    AND2X2                  gscl45nm
+    AOI22X1                 gscl45nm
+    AddRoundKey
+        HAX1                gscl45nm
+    BUFX2                   gscl45nm
+    Control_FSM                       r
+        AND2X1              gscl45nm
+        AOI21X1             gscl45nm
+        AOI22X1             gscl45nm
+        BUFX2               gscl45nm
+        DFFSR               gscl45nm
+        INVX1               gscl45nm
+        LATCH               gscl45nm
+        NAND3X1             gscl45nm
+        NOR3X1              gscl45nm
+        OAI21X1             gscl45nm
+        OR2X1               gscl45nm
+    DFFSR                   gscl45nm
+    INVX1                   gscl45nm
+    Keyscheduler                      r
+        AND2X1              gscl45nm
+        AOI22X1             gscl45nm
+        BUFX2               gscl45nm
+        ByteSub_16
+            AND2X1          gscl45nm
+            AOI21X1         gscl45nm
+            AOI22X1         gscl45nm
+            BUFX2           gscl45nm
+            INVX1           gscl45nm
+            NAND3X1         gscl45nm
+            NOR3X1          gscl45nm
+            OAI21X1         gscl45nm
+            OR2X1           gscl45nm
+        ByteSub_17
+            AND2X1          gscl45nm
+            AOI21X1         gscl45nm
+            AOI22X1         gscl45nm
+            BUFX2           gscl45nm
+            INVX1           gscl45nm
+            NAND3X1         gscl45nm
+            NOR3X1          gscl45nm
+            OAI21X1         gscl45nm
+            OR2X1           gscl45nm
+        ByteSub_18
+            AND2X1          gscl45nm
+            AOI21X1         gscl45nm
+            AOI22X1         gscl45nm
+            BUFX2           gscl45nm
+            INVX1           gscl45nm
+            NAND3X1         gscl45nm
+            NOR3X1          gscl45nm
+            OAI21X1         gscl45nm
+            OR2X1           gscl45nm
+        ByteSub_19
+            AND2X1          gscl45nm
+            AOI21X1         gscl45nm
+            AOI22X1         gscl45nm
+            BUFX2           gscl45nm
+            INVX1           gscl45nm
+            NAND3X1         gscl45nm
+            NOR3X1          gscl45nm
+            OAI21X1         gscl45nm
+            OR2X1           gscl45nm
+        DFFSR               gscl45nm
+        FAX1                gscl45nm
+        INVX1               gscl45nm
+        MUX2X1              gscl45nm
+        NAND3X1             gscl45nm
+        OAI21X1             gscl45nm
+        OR2X1               gscl45nm
+        XNOR2X1             gscl45nm
+    MixColumn
+        AOI22X1             gscl45nm
+        BUFX2               gscl45nm
+        FAX1                gscl45nm
+        INVX1               gscl45nm
+        MUX2X1              gscl45nm
+        XNOR2X1             gscl45nm
+    OAI21X1                 gscl45nm
+    OR2X1                   gscl45nm
+    ShiftRow
+        BUFX2               gscl45nm
+    SubBytes
+        ByteSub_0
+            AND2X1          gscl45nm
+            AOI21X1         gscl45nm
+            AOI22X1         gscl45nm
+            BUFX2           gscl45nm
+            INVX1           gscl45nm
+            NAND3X1         gscl45nm
+            NOR3X1          gscl45nm
+            OAI21X1         gscl45nm
+            OR2X1           gscl45nm
+        ByteSub_1
+            AND2X1          gscl45nm
+            AOI21X1         gscl45nm
+            AOI22X1         gscl45nm
+            BUFX2           gscl45nm
+            INVX1           gscl45nm
+            NAND3X1         gscl45nm
+            NOR3X1          gscl45nm
+            OAI21X1         gscl45nm
+            OR2X1           gscl45nm
+        ByteSub_2
+            AND2X1          gscl45nm
+            AOI21X1         gscl45nm
+            AOI22X1         gscl45nm
+            BUFX2           gscl45nm
+            INVX1           gscl45nm
+            NAND3X1         gscl45nm
+            NOR3X1          gscl45nm
+            OAI21X1         gscl45nm
+            OR2X1           gscl45nm
+        ByteSub_3
+            AND2X1          gscl45nm
+            AOI21X1         gscl45nm
+            AOI22X1         gscl45nm
+            BUFX2           gscl45nm
+            INVX1           gscl45nm
+            NAND3X1         gscl45nm
+            NOR3X1          gscl45nm
+            OAI21X1         gscl45nm
+            OR2X1           gscl45nm
+        ByteSub_4
+            AND2X1          gscl45nm
+            AOI21X1         gscl45nm
+            AOI22X1         gscl45nm
+            BUFX2           gscl45nm
+            INVX1           gscl45nm
+            NAND3X1         gscl45nm
+            NOR3X1          gscl45nm
+            OAI21X1         gscl45nm
+            OR2X1           gscl45nm
+        ByteSub_5
+            AND2X1          gscl45nm
+            AOI21X1         gscl45nm
+            AOI22X1         gscl45nm
+            BUFX2           gscl45nm
+            INVX1           gscl45nm
+            NAND3X1         gscl45nm
+            NOR3X1          gscl45nm
+            OAI21X1         gscl45nm
+            OR2X1           gscl45nm
+        ByteSub_6
+            AND2X1          gscl45nm
+            AOI21X1         gscl45nm
+            AOI22X1         gscl45nm
+            BUFX2           gscl45nm
+            INVX1           gscl45nm
+            NAND3X1         gscl45nm
+            NOR3X1          gscl45nm
+            OAI21X1         gscl45nm
+            OR2X1           gscl45nm
+        ByteSub_7
+            AND2X1          gscl45nm
+            AOI21X1         gscl45nm
+            AOI22X1         gscl45nm
+            BUFX2           gscl45nm
+            INVX1           gscl45nm
+            NAND3X1         gscl45nm
+            NOR3X1          gscl45nm
+            OAI21X1         gscl45nm
+            OR2X1           gscl45nm
+        ByteSub_8
+            AND2X1          gscl45nm
+            AOI21X1         gscl45nm
+            AOI22X1         gscl45nm
+            BUFX2           gscl45nm
+            INVX1           gscl45nm
+            NAND3X1         gscl45nm
+            NOR3X1          gscl45nm
+            OAI21X1         gscl45nm
+            OR2X1           gscl45nm
+        ByteSub_9
+            AND2X1          gscl45nm
+            AOI21X1         gscl45nm
+            AOI22X1         gscl45nm
+            BUFX2           gscl45nm
+            INVX1           gscl45nm
+            NAND3X1         gscl45nm
+            NOR3X1          gscl45nm
+            OAI21X1         gscl45nm
+            OR2X1           gscl45nm
+        ByteSub_10
+            AND2X1          gscl45nm
+            AOI21X1         gscl45nm
+            AOI22X1         gscl45nm
+            BUFX2           gscl45nm
+            INVX1           gscl45nm
+            NAND3X1         gscl45nm
+            NOR3X1          gscl45nm
+            OAI21X1         gscl45nm
+            OR2X1           gscl45nm
+        ByteSub_11
+            AND2X1          gscl45nm
+            AOI21X1         gscl45nm
+            AOI22X1         gscl45nm
+            BUFX2           gscl45nm
+            INVX1           gscl45nm
+            NAND3X1         gscl45nm
+            NOR3X1          gscl45nm
+            OAI21X1         gscl45nm
+            OR2X1           gscl45nm
+        ByteSub_12
+            AND2X1          gscl45nm
+            AOI21X1         gscl45nm
+            AOI22X1         gscl45nm
+            BUFX2           gscl45nm
+            INVX1           gscl45nm
+            NAND3X1         gscl45nm
+            NOR3X1          gscl45nm
+            OAI21X1         gscl45nm
+            OR2X1           gscl45nm
+        ByteSub_13
+            AND2X1          gscl45nm
+            AOI21X1         gscl45nm
+            AOI22X1         gscl45nm
+            BUFX2           gscl45nm
+            INVX1           gscl45nm
+            NAND3X1         gscl45nm
+            NOR3X1          gscl45nm
+            OAI21X1         gscl45nm
+            OR2X1           gscl45nm
+        ByteSub_14
+            AND2X1          gscl45nm
+            AOI21X1         gscl45nm
+            AOI22X1         gscl45nm
+            BUFX2           gscl45nm
+            INVX1           gscl45nm
+            NAND3X1         gscl45nm
+            NOR3X1          gscl45nm
+            OAI21X1         gscl45nm
+            OR2X1           gscl45nm
+        ByteSub_15
+            AND2X1          gscl45nm
+            AOI21X1         gscl45nm
+            AOI22X1         gscl45nm
+            BUFX2           gscl45nm
+            INVX1           gscl45nm
+            NAND3X1         gscl45nm
+            NOR3X1          gscl45nm
+            OAI21X1         gscl45nm
+            OR2X1           gscl45nm
+1

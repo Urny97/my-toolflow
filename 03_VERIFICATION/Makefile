@@ -11,7 +11,7 @@ base_dir = $(abspath ..)
 test_dir = $(abspath ../99_SRC/test_benches)
 synth_dir = $(abspath ../02_SYNTHESIS/data)
 tech_dir = $(abspath ../99_SRC/technology/NCSU-FreePDK45-1.4/FreePDK45/osu_soc/lib/files)
-test_bench = tb_AES
+test_bench = AES128_tb
 test_program = AES
 
 verilog = TRUE
@@ -38,6 +38,7 @@ read_files:
 	find $(tech_dir) -name '*.vhd' >> vhdl_file_list
 	find $(synth_dir) -name '*.vhd' >> vhdl_file_list
 	find $(test_dir) -name '*.vhd' >> vhdl_file_list
+	echo "/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/PKG_AES128.vhd" >> vhdl_file_list
 
 	find $(tech_dir) -name '*.v' >> verilog_file_list
 	find $(synth_dir) -name '*.v' >> verilog_file_list
@@ -55,7 +56,7 @@ ifeq ($(vhdl), TRUE)
 	vhdlan -smart_order -full64 `cat vhdl_file_list`
 endif
 	
-	$(simulator) $(test_bench) $(simulator_flags) $(compiler_directives) 
+	$(simulator) $(test_bench) $(simulator_flags) $(compiler_directives) -sdf max:AES128_tb/DUT:/users/students/r0622838/digital-design-flow-aes/02_SYNTHESIS/data/AES128.synthesis.sdf -negdelay +neg_tchk
 
 vpd2vcd:
 	# Convert VPD (VCD+ proprietary and binary) to IEEE VCD standard +morevhdl

@@ -1,0 +1,109 @@
+ 
+****************************************
+Report : qor
+Design : AES128
+Version: M-2016.12-SP2
+Date   : Sun Mar 10 17:39:52 2019
+****************************************
+
+
+  Timing Path Group 'Inputs'
+  -----------------------------------
+  Levels of Logic:          10.000000
+  Critical Path Length:      1.292608
+  Critical Path Slack:       7.587815
+  Critical Path Clk Period: 19.950001
+  Total Negative Slack:      0.000000
+  No. of Violating Paths:    0.000000
+  Worst Hold Violation:      0.000000
+  Total Hold Violation:      0.000000
+  No. of Hold Violations:    0.000000
+  -----------------------------------
+
+  Timing Path Group 'Outputs'
+  -----------------------------------
+  Levels of Logic:          10.000000
+  Critical Path Length:      1.238149
+  Critical Path Slack:       7.661851
+  Critical Path Clk Period: 19.950001
+  Total Negative Slack:      0.000000
+  No. of Violating Paths:    0.000000
+  Worst Hold Violation:      0.000000
+  Total Hold Violation:      0.000000
+  No. of Hold Violations:    0.000000
+  -----------------------------------
+
+  Timing Path Group 'Regs_to_Regs'
+  -----------------------------------
+  Levels of Logic:          43.000000
+  Critical Path Length:      1.611659
+  Critical Path Slack:      17.210594
+  Critical Path Clk Period: 19.950001
+  Total Negative Slack:      0.000000
+  No. of Violating Paths:    0.000000
+  Worst Hold Violation:     -0.875665
+  Total Hold Violation:   -441.668579
+  No. of Hold Violations:  516.000000
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:         26
+  Hierarchical Port Count:       1749
+  Leaf Cell Count:              18636
+  Buf/Inv Cell Count:            8454
+  Buf Cell Count:                3527
+  Inv Cell Count:                4927
+  CT Buf/Inv Cell Count:            0
+  Combinational Cell Count:     18114
+  Sequential Cell Count:          522
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:    40766.682087
+  Noncombinational Area:  5373.954414
+  Buf/Inv Area:          15212.828398
+  Total Buffer Area:      8276.105217
+  Total Inverter Area:    6936.723181
+  Macro/Black Box Area:      0.000000
+  Net Area:                  0.000000
+  -----------------------------------
+  Cell Area:             46140.636501
+  Design Area:           46140.636501
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:         18970
+  Nets With Violations:          3970
+  Max Trans Violations:             0
+  Max Cap Violations:            3970
+  -----------------------------------
+
+
+  Hostname: vierre64.esat.kuleuven.be
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                6.704041
+  Logic Optimization:              5.097351
+  Mapping Optimization:            188.299316
+  -----------------------------------------
+  Overall Compile Time:            295.608948
+  Overall Compile Wall Clock Time: 227.092331
+
+  --------------------------------------------------------------------
+
+  Design  WNS: 0.000000  TNS: 0.000000  Number of Violating Paths: 0
+
+
+  Design (Hold)  WNS: 0.875665  TNS: 441.669250  Number of Violating Paths: 516
+
+  --------------------------------------------------------------------
+
+
+1
