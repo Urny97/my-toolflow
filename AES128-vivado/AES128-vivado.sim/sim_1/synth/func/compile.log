@@ -1,0 +1,28 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/users/students/r0622838/digital-design-flow-aes/AES128-vivado/AES128-vivado.sim/sim_1/synth/func/AES128_tb_func_synth.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ByteSub
+INFO: [VRFC 10-307] analyzing entity ByteSub_0
+INFO: [VRFC 10-307] analyzing entity ByteSub_1
+INFO: [VRFC 10-307] analyzing entity ByteSub_10
+INFO: [VRFC 10-307] analyzing entity ByteSub_11
+INFO: [VRFC 10-307] analyzing entity ByteSub_12
+INFO: [VRFC 10-307] analyzing entity ByteSub_13
+INFO: [VRFC 10-307] analyzing entity ByteSub_14
+INFO: [VRFC 10-307] analyzing entity ByteSub_15
+INFO: [VRFC 10-307] analyzing entity ByteSub_16
+INFO: [VRFC 10-307] analyzing entity ByteSub_17
+INFO: [VRFC 10-307] analyzing entity ByteSub_18
+INFO: [VRFC 10-307] analyzing entity ByteSub_2
+INFO: [VRFC 10-307] analyzing entity ByteSub_3
+INFO: [VRFC 10-307] analyzing entity ByteSub_4
+INFO: [VRFC 10-307] analyzing entity ByteSub_5
+INFO: [VRFC 10-307] analyzing entity ByteSub_6
+INFO: [VRFC 10-307] analyzing entity ByteSub_7
+INFO: [VRFC 10-307] analyzing entity ByteSub_8
+INFO: [VRFC 10-307] analyzing entity ByteSub_9
+INFO: [VRFC 10-307] analyzing entity Control_FSM
+INFO: [VRFC 10-307] analyzing entity Keyscheduler
+INFO: [VRFC 10-307] analyzing entity SubBytes
+INFO: [VRFC 10-307] analyzing entity AES128
+INFO: [VRFC 10-163] Analyzing VHDL file "/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/PKG_AES128.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/users/students/r0622838/digital-design-flow-aes/99_SRC/test_benches/AES128_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity AES128_tb

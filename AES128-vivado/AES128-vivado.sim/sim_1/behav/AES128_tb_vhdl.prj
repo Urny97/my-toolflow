@@ -1,0 +1,14 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  "../../../../99_SRC/my_src_hdl/PKG_AES128.vhd"
+vhdl xil_defaultlib  "../../../../99_SRC/my_src_hdl/AES128.vhd"
+vhdl xil_defaultlib  "../../../../99_SRC/my_src_hdl/AddRoundKey.vhd"
+vhdl xil_defaultlib  "../../../../99_SRC/my_src_hdl/Control_FSM.vhd"
+vhdl xil_defaultlib  "../../../../99_SRC/my_src_hdl/Keyscheduler.vhd"
+vhdl xil_defaultlib  "../../../../99_SRC/my_src_hdl/SubBytes.vhd"
+vhdl xil_defaultlib  "../../../../99_SRC/my_src_hdl/bytesub.vhd"
+vhdl xil_defaultlib  "../../../../99_SRC/my_src_hdl/mixcolumn.vhd"
+vhdl xil_defaultlib  "../../../../99_SRC/my_src_hdl/shiftrow.vhd"
+vhdl xil_defaultlib  "../../../../99_SRC/test_benches/AES128_tb.vhd"
+
+# Do not sort compile order
+nosort

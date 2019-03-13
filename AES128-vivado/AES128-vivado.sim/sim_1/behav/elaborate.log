@@ -1,0 +1,26 @@
+Vivado Simulator 2017.1
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: /esat/micas-data/software/xilinx_vivado_2017.1/Vivado/2017.1/bin/unwrapped/lnx64.o/xelab -wto f8a4f9f7f41a49e684f0b4c641be48c2 --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot AES128_tb_behav xil_defaultlib.AES128_tb -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_textio
+Compiling package xil_defaultlib.pkg_aes128
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture internals of entity xil_defaultlib.ByteSub [bytesub_default]
+Compiling architecture behavioral of entity xil_defaultlib.Keyscheduler [keyscheduler_default]
+Compiling architecture behavioural of entity xil_defaultlib.Control_FSM [control_fsm_default]
+Compiling architecture addroundkey_arch of entity xil_defaultlib.AddRoundKey [addroundkey_default]
+Compiling architecture behavioural of entity xil_defaultlib.SubBytes [subbytes_default]
+Compiling architecture shiftrow_arch of entity xil_defaultlib.ShiftRow [shiftrow_default]
+Compiling architecture mixcolumn_arch of entity xil_defaultlib.MixColumn [mixcolumn_default]
+Compiling architecture behavioral of entity xil_defaultlib.AES128 [aes128_default]
+Compiling architecture behavioural of entity xil_defaultlib.aes128_tb
+Built simulation snapshot AES128_tb_behav

@@ -1,0 +1,8 @@
+Vivado Simulator 2017.1
+Time resolution is 1 ps
+Note: Tests done
+Time: 19495100 ps  Iteration: 0  Process: /AES128_tb/PSTIM  File: /users/students/r0622838/digital-design-flow-aes/99_SRC/test_benches/AES128_tb.vhd
+Note: Measurement done
+Time: 19825100 ps  Iteration: 0  Process: /AES128_tb/PSTIM  File: /users/students/r0622838/digital-design-flow-aes/99_SRC/test_benches/AES128_tb.vhd
+Note: Saving report done
+Time: 19825100 ps  Iteration: 0  Process: /AES128_tb/PSTIM  File: /users/students/r0622838/digital-design-flow-aes/99_SRC/test_benches/AES128_tb.vhd

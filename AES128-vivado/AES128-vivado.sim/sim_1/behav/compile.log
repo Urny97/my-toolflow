@@ -1,0 +1,38 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/PKG_AES128.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/AES128.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity AES128
+INFO: [VRFC 10-163] Analyzing VHDL file "/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/AddRoundKey.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity AddRoundKey
+INFO: [VRFC 10-163] Analyzing VHDL file "/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/Control_FSM.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Control_FSM
+INFO: [VRFC 10-163] Analyzing VHDL file "/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/Keyscheduler.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Keyscheduler
+INFO: [VRFC 10-163] Analyzing VHDL file "/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/SubBytes.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity SubBytes
+INFO: [VRFC 10-163] Analyzing VHDL file "/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/bytesub.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ByteSub
+INFO: [VRFC 10-163] Analyzing VHDL file "/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/mixcolumn.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity MixColumn
+INFO: [VRFC 10-163] Analyzing VHDL file "/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/shiftrow.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ShiftRow
+INFO: [VRFC 10-163] Analyzing VHDL file "/users/students/r0622838/digital-design-flow-aes/99_SRC/test_benches/AES128_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity AES128_tb
+INFO: [VRFC 10-163] Analyzing VHDL file "/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/PKG_AES128.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/AES128.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity AES128
+INFO: [VRFC 10-163] Analyzing VHDL file "/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/AddRoundKey.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity AddRoundKey
+INFO: [VRFC 10-163] Analyzing VHDL file "/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/Control_FSM.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Control_FSM
+INFO: [VRFC 10-163] Analyzing VHDL file "/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/Keyscheduler.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Keyscheduler
+INFO: [VRFC 10-163] Analyzing VHDL file "/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/SubBytes.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity SubBytes
+INFO: [VRFC 10-163] Analyzing VHDL file "/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/bytesub.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ByteSub
+INFO: [VRFC 10-163] Analyzing VHDL file "/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/mixcolumn.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity MixColumn
+INFO: [VRFC 10-163] Analyzing VHDL file "/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/shiftrow.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ShiftRow
+INFO: [VRFC 10-163] Analyzing VHDL file "/users/students/r0622838/digital-design-flow-aes/99_SRC/test_benches/AES128_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity AES128_tb

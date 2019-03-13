@@ -5,3 +5,4 @@
 /02_SYNTHESIS/*
 !/02_SYNTHESIS/Makefile
 !/02_SYNTHESIS/scripts
+vivado*

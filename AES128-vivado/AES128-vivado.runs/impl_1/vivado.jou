@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.1 (64-bit)
+# SW Build 1846317 on Fri Apr 14 18:54:47 MDT 2017
+# IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+# Start of session at: Mon Mar 11 13:57:53 2019
+# Process ID: 28159
+# Current directory: /users/students/r0622838/digital-design-flow-aes/AES128-vivado/AES128-vivado.runs/impl_1
+# Command line: vivado -log AES128.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source AES128.tcl -notrace
+# Log file: /users/students/r0622838/digital-design-flow-aes/AES128-vivado/AES128-vivado.runs/impl_1/AES128.vdi
+# Journal file: /users/students/r0622838/digital-design-flow-aes/AES128-vivado/AES128-vivado.runs/impl_1/vivado.jou
+#-----------------------------------------------------------
+source AES128.tcl -notrace

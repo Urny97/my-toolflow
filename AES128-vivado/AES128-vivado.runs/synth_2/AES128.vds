@@ -1,0 +1,502 @@
+#-----------------------------------------------------------
+# Vivado v2017.1 (64-bit)
+# SW Build 1846317 on Fri Apr 14 18:54:47 MDT 2017
+# IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+# Start of session at: Wed Mar 13 12:04:20 2019
+# Process ID: 28182
+# Current directory: /users/students/r0622838/digital-design-flow-aes/AES128-vivado/AES128-vivado.runs/synth_2
+# Command line: vivado -log AES128.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source AES128.tcl
+# Log file: /users/students/r0622838/digital-design-flow-aes/AES128-vivado/AES128-vivado.runs/synth_2/AES128.vds
+# Journal file: /users/students/r0622838/digital-design-flow-aes/AES128-vivado/AES128-vivado.runs/synth_2/vivado.jou
+#-----------------------------------------------------------
+source AES128.tcl -notrace
+Command: synth_design -top AES128 -part xcvu440-flga2892-3-e
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xcvu440-flga2892'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xcvu440-flga2892'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 28198 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1344.395 ; gain = 74.988 ; free physical = 18018 ; free virtual = 52647
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'AES128' [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/AES128.vhd:18]
+INFO: [Synth 8-3491] module 'Keyscheduler' declared at '/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/Keyscheduler.vhd:7' bound to instance 'KeyS' of component 'KeyScheduler' [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/AES128.vhd:84]
+INFO: [Synth 8-638] synthesizing module 'Keyscheduler' [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/Keyscheduler.vhd:17]
+INFO: [Synth 8-3491] module 'ByteSub' declared at '/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/bytesub.vhd:4' bound to instance 'inst_ByteSub' of component 'ByteSub' [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/Keyscheduler.vhd:44]
+INFO: [Synth 8-638] synthesizing module 'ByteSub' [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/bytesub.vhd:10]
+INFO: [Synth 8-226] default block is never used [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/bytesub.vhd:15]
+INFO: [Synth 8-256] done synthesizing module 'ByteSub' (1#1) [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/bytesub.vhd:10]
+INFO: [Synth 8-3491] module 'ByteSub' declared at '/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/bytesub.vhd:4' bound to instance 'inst_ByteSub' of component 'ByteSub' [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/Keyscheduler.vhd:44]
+INFO: [Synth 8-3491] module 'ByteSub' declared at '/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/bytesub.vhd:4' bound to instance 'inst_ByteSub' of component 'ByteSub' [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/Keyscheduler.vhd:44]
+INFO: [Synth 8-3491] module 'ByteSub' declared at '/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/bytesub.vhd:4' bound to instance 'inst_ByteSub' of component 'ByteSub' [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/Keyscheduler.vhd:44]
+INFO: [Synth 8-256] done synthesizing module 'Keyscheduler' (2#1) [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/Keyscheduler.vhd:17]
+INFO: [Synth 8-3491] module 'Control_FSM' declared at '/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/Control_FSM.vhd:6' bound to instance 'Ctl_FSM' of component 'Control_FSM' [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/AES128.vhd:86]
+INFO: [Synth 8-638] synthesizing module 'Control_FSM' [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/Control_FSM.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'Control_FSM' (3#1) [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/Control_FSM.vhd:16]
+INFO: [Synth 8-3491] module 'AddRoundKey' declared at '/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/AddRoundKey.vhd:4' bound to instance 'ARK' of component 'AddRoundKey' [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/AES128.vhd:90]
+INFO: [Synth 8-638] synthesizing module 'AddRoundKey' [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/AddRoundKey.vhd:10]
+INFO: [Synth 8-256] done synthesizing module 'AddRoundKey' (4#1) [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/AddRoundKey.vhd:10]
+INFO: [Synth 8-3491] module 'SubBytes' declared at '/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/SubBytes.vhd:6' bound to instance 'SB' of component 'SubBytes' [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/AES128.vhd:91]
+INFO: [Synth 8-638] synthesizing module 'SubBytes' [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/SubBytes.vhd:13]
+INFO: [Synth 8-3491] module 'ByteSub' declared at '/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/bytesub.vhd:4' bound to instance 'C1' of component 'bytesub' [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/SubBytes.vhd:24]
+INFO: [Synth 8-3491] module 'ByteSub' declared at '/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/bytesub.vhd:4' bound to instance 'C2' of component 'bytesub' [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/SubBytes.vhd:25]
+INFO: [Synth 8-3491] module 'ByteSub' declared at '/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/bytesub.vhd:4' bound to instance 'C3' of component 'bytesub' [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/SubBytes.vhd:26]
+INFO: [Synth 8-3491] module 'ByteSub' declared at '/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/bytesub.vhd:4' bound to instance 'C4' of component 'bytesub' [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/SubBytes.vhd:27]
+INFO: [Synth 8-3491] module 'ByteSub' declared at '/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/bytesub.vhd:4' bound to instance 'C5' of component 'bytesub' [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/SubBytes.vhd:28]
+INFO: [Synth 8-3491] module 'ByteSub' declared at '/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/bytesub.vhd:4' bound to instance 'C6' of component 'bytesub' [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/SubBytes.vhd:29]
+INFO: [Synth 8-3491] module 'ByteSub' declared at '/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/bytesub.vhd:4' bound to instance 'C7' of component 'bytesub' [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/SubBytes.vhd:30]
+INFO: [Synth 8-3491] module 'ByteSub' declared at '/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/bytesub.vhd:4' bound to instance 'C8' of component 'bytesub' [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/SubBytes.vhd:31]
+INFO: [Synth 8-3491] module 'ByteSub' declared at '/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/bytesub.vhd:4' bound to instance 'C9' of component 'bytesub' [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/SubBytes.vhd:32]
+INFO: [Synth 8-3491] module 'ByteSub' declared at '/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/bytesub.vhd:4' bound to instance 'C10' of component 'bytesub' [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/SubBytes.vhd:33]
+INFO: [Synth 8-3491] module 'ByteSub' declared at '/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/bytesub.vhd:4' bound to instance 'C11' of component 'bytesub' [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/SubBytes.vhd:34]
+INFO: [Synth 8-3491] module 'ByteSub' declared at '/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/bytesub.vhd:4' bound to instance 'C12' of component 'bytesub' [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/SubBytes.vhd:35]
+INFO: [Synth 8-3491] module 'ByteSub' declared at '/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/bytesub.vhd:4' bound to instance 'C13' of component 'bytesub' [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/SubBytes.vhd:36]
+INFO: [Synth 8-3491] module 'ByteSub' declared at '/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/bytesub.vhd:4' bound to instance 'C14' of component 'bytesub' [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/SubBytes.vhd:37]
+INFO: [Synth 8-3491] module 'ByteSub' declared at '/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/bytesub.vhd:4' bound to instance 'C15' of component 'bytesub' [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/SubBytes.vhd:38]
+INFO: [Synth 8-3491] module 'ByteSub' declared at '/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/bytesub.vhd:4' bound to instance 'C16' of component 'bytesub' [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/SubBytes.vhd:39]
+INFO: [Synth 8-256] done synthesizing module 'SubBytes' (5#1) [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/SubBytes.vhd:13]
+INFO: [Synth 8-3491] module 'ShiftRow' declared at '/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/shiftrow.vhd:4' bound to instance 'SR' of component 'ShiftRow' [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/AES128.vhd:92]
+INFO: [Synth 8-638] synthesizing module 'ShiftRow' [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/shiftrow.vhd:9]
+INFO: [Synth 8-256] done synthesizing module 'ShiftRow' (6#1) [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/shiftrow.vhd:9]
+INFO: [Synth 8-3491] module 'MixColumn' declared at '/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/mixcolumn.vhd:4' bound to instance 'MC' of component 'MixColumn' [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/AES128.vhd:93]
+INFO: [Synth 8-638] synthesizing module 'MixColumn' [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/mixcolumn.vhd:11]
+INFO: [Synth 8-256] done synthesizing module 'MixColumn' (7#1) [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/mixcolumn.vhd:11]
+INFO: [Synth 8-226] default block is never used [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/AES128.vhd:112]
+INFO: [Synth 8-256] done synthesizing module 'AES128' (8#1) [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/AES128.vhd:18]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1385.910 ; gain = 116.504 ; free physical = 18025 ; free virtual = 52654
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1385.910 ; gain = 116.504 ; free physical = 18026 ; free virtual = 52655
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xcvu440-flga2892-3-e
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1393.906 ; gain = 124.500 ; free physical = 18026 ; free virtual = 52655
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xcvu440-flga2892-3-e
+INFO: [Synth 8-802] inferred FSM for state register 'curState_reg' in module 'Control_FSM'
+WARNING: [Synth 8-6014] Unused sequential element curState_reg was removed.  [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/Control_FSM.vhd:59]
+WARNING: [Synth 8-6014] Unused sequential element rcon_reg_reg was removed.  [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/Control_FSM.vhd:31]
+WARNING: [Synth 8-6014] Unused sequential element curState_reg was removed.  [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/Control_FSM.vhd:59]
+WARNING: [Synth 8-6014] Unused sequential element curState_reg was removed.  [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/Control_FSM.vhd:59]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                   sidle |                              000 |                              000
+             sfirstround |                              001 |                              001
+            sloopuntil10 |                              010 |                              010
+              slastround |                              011 |                              011
+                   sdone |                              100 |                              100
+                  iSTATE |                              101 |                              111
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'curState_reg' using encoding 'sequential' in module 'Control_FSM'
+WARNING: [Synth 8-6014] Unused sequential element curState_reg was removed.  [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/Control_FSM.vhd:59]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1409.922 ; gain = 140.516 ; free physical = 17983 ; free virtual = 52612
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 4     
+	   2 Input      8 Bit         XORs := 37    
+	   3 Input      8 Bit         XORs := 10    
+	   5 Input      8 Bit         XORs := 6     
+	   4 Input      8 Bit         XORs := 2     
++---Registers : 
+	              128 Bit    Registers := 4     
+	                4 Bit    Registers := 1     
++---Muxes : 
+	   2 Input    128 Bit        Muxes := 3     
+	   4 Input    128 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 16    
+	   2 Input      4 Bit        Muxes := 1     
+	   7 Input      3 Bit        Muxes := 1     
+	   6 Input      2 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 6     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module AES128 
+Detailed RTL Component Info : 
++---Registers : 
+	              128 Bit    Registers := 3     
++---Muxes : 
+	   2 Input    128 Bit        Muxes := 2     
+	   4 Input    128 Bit        Muxes := 1     
+Module Keyscheduler 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input     32 Bit         XORs := 4     
+	   2 Input      8 Bit         XORs := 1     
++---Registers : 
+	              128 Bit    Registers := 1     
++---Muxes : 
+	   2 Input    128 Bit        Muxes := 1     
+Module Control_FSM 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	                4 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 1     
+	   7 Input      3 Bit        Muxes := 1     
+	   6 Input      2 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 6     
+Module AddRoundKey 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      8 Bit         XORs := 16    
+Module MixColumn 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      8 Bit         XORs := 20    
+	   3 Input      8 Bit         XORs := 10    
+	   5 Input      8 Bit         XORs := 6     
+	   4 Input      8 Bit         XORs := 2     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 16    
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 2880 (col length:120)
+BRAMs: 5040 (col length: RAMB18 360 RAMB36 180)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-6014] Unused sequential element Ctl_FSM/rcon_reg_reg was removed.  [/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/Control_FSM.vhd:31]
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[127]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[126]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[125]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[124]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[123]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[122]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[121]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[120]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[119]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[118]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[117]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[116]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[115]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[114]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[113]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[112]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[111]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[110]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[109]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[108]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[107]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[106]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[105]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[104]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[103]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[102]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[101]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[100]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[99]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[98]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[97]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[96]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[95]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[94]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[93]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[92]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[91]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[90]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[89]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[88]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[87]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[86]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[85]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[84]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[83]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[82]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[81]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[80]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[79]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[78]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[77]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[76]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[75]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[74]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[73]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[72]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[71]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[70]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[69]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[68]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[67]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[66]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[65]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[64]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[63]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[62]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[61]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[60]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[59]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[58]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[57]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[56]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[55]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[54]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[53]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[52]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[51]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[50]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[49]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[48]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[47]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[46]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[45]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[44]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[43]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[42]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[41]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[40]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[39]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[38]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[37]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[36]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[35]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[34]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[33]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[32]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[31]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[30]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[29]) is unused and will be removed from module AES128.
+WARNING: [Synth 8-3332] Sequential element (KeyS/key_reg_reg_rep[28]) is unused and will be removed from module AES128.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 2065.984 ; gain = 796.578 ; free physical = 17332 ; free virtual = 51961
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++-------------+----------------------------------------+---------------+----------------+
+|Module Name  | RTL Object                             | Depth x Width | Implemented As | 
++-------------+----------------------------------------+---------------+----------------+
+|ByteSub      | BS_out                                 | 256x8         | LUT            | 
+|Keyscheduler | gen_ByteSub_key[3].inst_ByteSub/BS_out | 256x8         | LUT            | 
+|Keyscheduler | gen_ByteSub_key[2].inst_ByteSub/BS_out | 256x8         | LUT            | 
+|Keyscheduler | gen_ByteSub_key[1].inst_ByteSub/BS_out | 256x8         | LUT            | 
+|Keyscheduler | gen_ByteSub_key[0].inst_ByteSub/BS_out | 256x8         | LUT            | 
+|SubBytes     | C15/BS_out                             | 256x8         | LUT            | 
+|SubBytes     | C14/BS_out                             | 256x8         | LUT            | 
+|SubBytes     | C13/BS_out                             | 256x8         | LUT            | 
+|SubBytes     | C12/BS_out                             | 256x8         | LUT            | 
+|SubBytes     | C11/BS_out                             | 256x8         | LUT            | 
+|SubBytes     | C10/BS_out                             | 256x8         | LUT            | 
+|SubBytes     | C9/BS_out                              | 256x8         | LUT            | 
+|SubBytes     | C8/BS_out                              | 256x8         | LUT            | 
+|SubBytes     | C7/BS_out                              | 256x8         | LUT            | 
+|SubBytes     | C6/BS_out                              | 256x8         | LUT            | 
+|SubBytes     | C5/BS_out                              | 256x8         | LUT            | 
+|SubBytes     | C4/BS_out                              | 256x8         | LUT            | 
+|SubBytes     | C3/BS_out                              | 256x8         | LUT            | 
+|SubBytes     | C2/BS_out                              | 256x8         | LUT            | 
+|SubBytes     | C1/BS_out                              | 256x8         | LUT            | 
++-------------+----------------------------------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 2065.988 ; gain = 796.582 ; free physical = 17339 ; free virtual = 51968
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 2065.988 ; gain = 796.582 ; free physical = 17337 ; free virtual = 51966
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 2065.988 ; gain = 796.582 ; free physical = 17337 ; free virtual = 51966
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 2065.988 ; gain = 796.582 ; free physical = 17337 ; free virtual = 51966
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 2065.988 ; gain = 796.582 ; free physical = 17337 ; free virtual = 51966
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 2065.988 ; gain = 796.582 ; free physical = 17337 ; free virtual = 51966
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 2065.988 ; gain = 796.582 ; free physical = 17337 ; free virtual = 51966
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 2065.988 ; gain = 796.582 ; free physical = 17337 ; free virtual = 51966
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+------+------+
+|      |Cell  |Count |
++------+------+------+
+|1     |BUFG  |     1|
+|2     |LUT1  |     1|
+|3     |LUT2  |   259|
+|4     |LUT3  |    13|
+|5     |LUT4  |    12|
+|6     |LUT5  |   243|
+|7     |LUT6  |  1101|
+|8     |MUXF7 |   221|
+|9     |MUXF8 |    31|
+|10    |FDCE  |   527|
+|11    |IBUF  |   259|
+|12    |OBUF  |   129|
++------+------+------+
+
+Report Instance Areas: 
++------+--------------------------------------+-------------+------+
+|      |Instance                              |Module       |Cells |
++------+--------------------------------------+-------------+------+
+|1     |top                                   |             |  2797|
+|2     |  Ctl_FSM                             |Control_FSM  |   302|
+|3     |  KeyS                                |Keyscheduler |   616|
+|4     |    \gen_ByteSub_key[3].inst_ByteSub  |ByteSub_18   |    12|
+|5     |    \gen_ByteSub_key[2].inst_ByteSub  |ByteSub_17   |    24|
+|6     |    \gen_ByteSub_key[1].inst_ByteSub  |ByteSub_16   |    24|
+|7     |    \gen_ByteSub_key[0].inst_ByteSub  |ByteSub_15   |    24|
+|8     |  SB                                  |SubBytes     |  1106|
+|9     |    C1                                |ByteSub      |    75|
+|10    |    C10                               |ByteSub_0    |    86|
+|11    |    C11                               |ByteSub_1    |    71|
+|12    |    C12                               |ByteSub_2    |    67|
+|13    |    C13                               |ByteSub_3    |    50|
+|14    |    C14                               |ByteSub_4    |    72|
+|15    |    C15                               |ByteSub_5    |    51|
+|16    |    C16                               |ByteSub_6    |    68|
+|17    |    C2                                |ByteSub_7    |    64|
+|18    |    C3                                |ByteSub_8    |    65|
+|19    |    C4                                |ByteSub_9    |    89|
+|20    |    C5                                |ByteSub_10   |    59|
+|21    |    C6                                |ByteSub_11   |    69|
+|22    |    C7                                |ByteSub_12   |    92|
+|23    |    C8                                |ByteSub_13   |    67|
+|24    |    C9                                |ByteSub_14   |    61|
++------+--------------------------------------+-------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 2065.988 ; gain = 796.582 ; free physical = 17337 ; free virtual = 51966
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 126 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 2065.988 ; gain = 796.582 ; free physical = 17338 ; free virtual = 51967
+Synthesis Optimization Complete : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 2065.992 ; gain = 796.582 ; free physical = 17337 ; free virtual = 51967
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 260 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 260 instances were transformed.
+  BUFG => BUFGCE: 1 instances
+  IBUF => IBUF (IBUFCTRL, INBUF): 259 instances
+
+55 Infos, 106 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 2219.891 ; gain = 1029.336 ; free physical = 17276 ; free virtual = 51906
+INFO: [Common 17-1381] The checkpoint '/users/students/r0622838/digital-design-flow-aes/AES128-vivado/AES128-vivado.runs/synth_2/AES128.dcp' has been generated.
+report_utilization: Time (s): cpu = 00:00:00.44 ; elapsed = 00:00:00.56 . Memory (MB): peak = 2243.910 ; gain = 0.000 ; free physical = 17274 ; free virtual = 51904
+INFO: [Common 17-206] Exiting Vivado at Wed Mar 13 12:05:19 2019...

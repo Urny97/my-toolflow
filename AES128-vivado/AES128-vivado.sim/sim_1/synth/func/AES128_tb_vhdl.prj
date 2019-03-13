@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  "AES128_tb_func_synth.vhd"
+vhdl xil_defaultlib  "../../../../../99_SRC/my_src_hdl/PKG_AES128.vhd"
+vhdl xil_defaultlib  "../../../../../99_SRC/test_benches/AES128_tb.vhd"
+
+# Do not sort compile order
+nosort
