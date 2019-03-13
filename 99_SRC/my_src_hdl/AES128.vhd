@@ -107,7 +107,7 @@ begin
   end process;
 
   -- DataOut mux
-  DO_mux: process(contr_out_DO_mux_sel, ARK_out_reg_in)
+  DO_mux: process(contr_out_DO_mux_sel, DO_reg_out)
   begin
     case contr_out_DO_mux_sel is
       when '0' => final_data_out <= (others => '0');

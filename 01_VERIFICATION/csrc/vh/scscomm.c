@@ -42,7 +42,7 @@ void scsim_comm_genfunc(scsim_communication_data_t *s) {
    s->UserName = (char *) sc_mem_malloc(9);
    strcpy(s->UserName, "r0622838");
    s->CreationDate = (char *) sc_mem_malloc(25);
-   strcpy(s->CreationDate, "Sun Mar 10 17:26:47 2019");
+   strcpy(s->CreationDate, "Wed Mar 13 15:05:15 2019");
    s->Hostname = (char *) sc_mem_malloc(26);
    strcpy(s->Hostname, "vierre64.esat.kuleuven.be");
    s->SciroccoVersion = (char *) 0;
@@ -61,7 +61,7 @@ void scsim_comm_genfunc(scsim_communication_data_t *s) {
    s->ElaborationOptions = (char *) sc_mem_malloc(49);
    strcpy(s->ElaborationOptions, "AES128_tb -full64 -timescale=1ns/10ps -debug_all");
    s->VhdlOptions = (char *) sc_mem_malloc(190);
-   strcpy(s->VhdlOptions, "-mxunielab -uni_make -nc -uum -vhtop WORK.dummy_mhdl_cfg_AES128_TB -elaboration_options /tmp/vcs_20190310162644_30813/elaboptfile_30813 -picarchive -debug 4 -debug_acc_options all+dmptf+bc ");
+   strcpy(s->VhdlOptions, "-mxunielab -uni_make -nc -uum -vhtop WORK.dummy_mhdl_cfg_AES128_TB -elaboration_options /tmp/vcs_20190313140513_12861/elaboptfile_12861 -picarchive -debug 4 -debug_acc_options all+dmptf+bc ");
    s->VerilogOptions = (char *) 0;
    s->PartitionCount  = 0;
    s->Partitions  = (char **) 0;

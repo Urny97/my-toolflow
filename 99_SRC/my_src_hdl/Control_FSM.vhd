@@ -59,84 +59,68 @@ architecture Behavioural of Control_FSM is
       curState <= sIdle;
     elsif rising_edge(clock) then
       curState <= nxtState;
+    else
+      curState <= curState;
     end if;
   end process;
 
 --Next State Register
-  FSM_nxtState : process(curState, ce, rcon_reg, reset)
+  FSM_nxtState : process(curState, ce, rcon_reg)
   begin
     case curState is
         when sIdle =>
-          if reset = '1' then
-            nxtState <= sIdle;
-          else
             if ce = '1' then
               if rcon_reg = "0000" then
                 nxtState <= sFirstRound;
+              else
+                nxtState <= curState;
               end if;
             else
               nxtState <= curState;
             end if;
-          end if;
 
         when sFirstRound =>
-          if reset = '1' then
-            nxtState <= sIdle;
-          else
             if ce = '1' then
               if rcon_reg = "0001" then
                 nxtState <= sLoopUntil10;
+              else
+                nxtState <= curState;
               end if;
             else
               nxtState <= curState;
             end if;
-          end if;
 
         when sLoopUntil10 =>
-          if reset = '1' then
-            nxtState <= sIdle;
-          else
             if ce = '1' then
               if rcon_reg = "1010" then
                 nxtState <= sLastRound;
+              else
+                nxtState <= curState;
               end if;
             else
               nxtState <= curState;
             end if;
-          end if;
 
         when sLastRound =>
-          if reset = '1' then
-            nxtState <= sIdle;
-          else
             if ce = '1' then
               nxtState <= sDone;
             else
               nxtState <= curState;
             end if;
-          end if;
 
         when sDone =>
-          if reset = '1' then
-            nxtState <= sIdle;
-          else
             if ce = '0' then
               nxtState <= sIdle;
             else
               nxtState <= curState;
             end if;
-          end if;
 
         when others =>
-          if reset = '1' then
-            nxtState <= sIdle;
-          else
             if ce = '1' then
               nxtState <= sIdle;
             else
               nxtState <= curState;
             end if;
-          end if;
     end case;
   end process;
 
