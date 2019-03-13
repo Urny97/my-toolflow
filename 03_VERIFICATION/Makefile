@@ -39,7 +39,6 @@ read_files:
 	find $(tech_dir) -name '*.vhd' >> vhdl_file_list
 	find $(synth_dir) -name '*.vhd' >> vhdl_file_list
 	find $(test_dir) -name '*.vhd' >> vhdl_file_list
-	echo "/users/students/r0622838/digital-design-flow-aes/99_SRC/my_src_hdl/PKG_AES128.vhd" >> vhdl_file_list
 	find $(src_dir) -name 'PKG_AES128.vhd' >> vhdl_file_list
 
 	find $(tech_dir) -name '*.v' >> verilog_file_list
