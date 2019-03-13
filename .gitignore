@@ -1,0 +1,7 @@
+/01_VERIFICATION/*
+!/01_VERIFICATION/Makefile
+!/01_VERIFICATION/testreport.txt
+!/01_VERIFICATION/tv_output.txt
+/02_SYNTHESIS/*
+!/02_SYNTHESIS/Makefile
+!/02_SYNTHESIS/scripts
