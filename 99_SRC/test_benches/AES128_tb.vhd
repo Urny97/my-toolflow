@@ -25,15 +25,21 @@ architecture Behavioural of AES128_tb is
   
   file fh_TESTVECTORS : text;
 
+   shared variable endsim : boolean := false;
+
 begin
 
   -- clock
   PCLK: process
   begin
-    clock <= '1';
-    wait for clock_period/2;
-    clock <= '0';
-    wait for clock_period/2;
+    if endsim=false then
+      clock <= '1';
+      wait for clock_period/2;
+      clock <= '0';
+      wait for clock_period/2;
+    else
+      wait;
+    end if;
   end process;
 
   PTV: process
@@ -42,7 +48,7 @@ begin
     variable v_separator: character;
     variable v_temp : STD_LOGIC_VECTOR(127 downto 0);
   begin
-    file_open(fh_TESTVECTORS, "/users/students/r0622838/digital-design-flow-aes/99_SRC/test_benches/tv_output.txt", read_mode);
+    file_open(fh_TESTVECTORS, "../99_SRC/test_benches/tv_output.txt", read_mode);
     v_i := 0;
     while not endfile(fh_TESTVECTORS) loop      
       readline(fh_TESTVECTORS, v_lineIn);
@@ -258,6 +264,9 @@ begin
     --printTestreport(testreport);
     saveTestreport(testreport);
     report("Saving report done");
+
+    endsim := true;
+    report "Simulation ended";
     
     wait;
   end process;
