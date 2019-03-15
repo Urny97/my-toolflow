@@ -57,12 +57,12 @@ ifeq ($(vhdl), TRUE)
 	vhdlan -smart_order -full64 `cat vhdl_file_list`
 endif
 	
-	$(simulator) $(test_bench) $(simulator_flags) $(compiler_directives) -sdf max:AES128_tb/DUT:/users/students/r0622838/digital-design-flow-aes/02_SYNTHESIS/data/AES128.synthesis.sdf -negdelay +neg_tchk
+	$(simulator) $(test_bench) $(simulator_flags) $(compiler_directives) -sdf max:AES128_tb/DUT:../02_SYNTHESIS/data/AES128.synthesis.sdf -negdelay +neg_tchk
 
 vpd2vcd:
 	# Convert VPD (VCD+ proprietary and binary) to IEEE VCD standard +morevhdl
 	vpd2vcd +includemda ./vcd_dump/dump.vpd ./vcd_dump/dump.vcd
-	rm -rf ./vcd_dump/dump.vpd
+	@rm -f ./vcd_dump/dump.vpd
 	
 # Run the simulation file
 run: compile

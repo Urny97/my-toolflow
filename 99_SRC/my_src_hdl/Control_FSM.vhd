@@ -59,8 +59,8 @@ architecture Behavioural of Control_FSM is
       curState <= sIdle;
     elsif rising_edge(clock) then
       curState <= nxtState;
-    else
-      curState <= curState;
+    -- else
+    --  curState <= curState;
     end if;
   end process;
 
