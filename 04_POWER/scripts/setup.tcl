@@ -10,7 +10,7 @@ set link_path "* $target_library"
 
 # Show where to look for the activity files of the program
 # This should match the vcd_dump_dir variable in the 03_VERIFICATION makefile!!!!!
-set vcd_dump_dir "."
+set vcd_dump_dir "/tmp/arne-vcd"
 
 set power_enable_analysis "true"
 set precision full

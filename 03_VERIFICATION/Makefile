@@ -48,7 +48,7 @@ read_files:
 all: compile run vpd2vcd
 
 compile: clean read_files
-	@mkdir -p vcd_dump
+	@mkdir -p /tmp/arne-vcd
 
 ifeq ($(verilog), TRUE)
 	vlogan -full64 `cat verilog_file_list`
@@ -61,8 +61,8 @@ endif
 
 vpd2vcd:
 	# Convert VPD (VCD+ proprietary and binary) to IEEE VCD standard +morevhdl
-	vpd2vcd +includemda ./vcd_dump/dump.vpd ./vcd_dump/dump.vcd
-	@rm -f ./vcd_dump/dump.vpd
+	vpd2vcd +includemda /tmp/arne-vcd/dump.vpd /tmp/arne-vcd/dump.vcd
+	@rm -f /tmp/arne-vcd/dump.vpd
 	
 # Run the simulation file
 run: compile
@@ -82,6 +82,6 @@ dve: compile
 # Clean up
 
 clean:
-	rm -rf simv* csrc *.key DVE* *.h *.a *.daidir verilog_file_list *.vcd *.vpd vhdl_file_list .vlogansetup.args AN.DB/ 64/ vcd_dump/
+	rm -rf simv* csrc *.key DVE* *.h *.a *.daidir verilog_file_list *.vcd *.vpd vhdl_file_list .vlogansetup.args AN.DB/ 64/ /tmp/arne-vcd/
 
 .PHONY: default all compile run dve clean

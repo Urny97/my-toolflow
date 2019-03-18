@@ -16,7 +16,7 @@ vhdl = TRUE
 # Direct this path to a directory that has "unlimited" disk space
 # Typically this would be a temp dir on the machine you are using
 # This should match the vcd_dump_dir variable defined in the setup.tcl in the 04_POWER section!!!!!
-vcd_dump_dir = /tmp/vcd_dump
+vcd_dump_dir = /tmp/arne-vcd
 
 # define the simulator
 simulator = vcs
