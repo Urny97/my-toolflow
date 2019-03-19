@@ -15,14 +15,14 @@ link
 
 # Averaged power estimate
 set power_analysis_mode "averaged" 
-read_vcd /tmp/arne-vcd/dump.vcd -strip_path TB_AES/UUT 
+read_vcd /tmp/arne-vcd/dump.vcd -strip_path AES128_TB/DUT 
 report_switching_activity -list_not_annotated > ../reports/$program.non_annotated.txt
 report_power -hierarchy > ../reports/$program.averaged.txt
 
 # Time based power estimate
 # Depending on the program this could take a while...
 set power_analysis_mode "time_based"
-read_vcd /tmp/arne-vcd/dump.vcd -strip_path TB_AES/UUT
+read_vcd /tmp/arne-vcd/dump.vcd -strip_path AES128_TB/DUT
 report_power -hierarchy > ../reports/$program.time_based.txt
 
 exit
