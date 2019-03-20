@@ -185,16 +185,19 @@ switch $supplyVoltage {
 		# Library search path and Milkyway locations
 		# -----------------------------------------------------------------------------
 
-		set stdcell_search_path [ list \
+		set_attribute lib_search_path [ list \
 								  ${libs}/Front_End/Liberty/NLDM/ \
 								   ]
-
+								   
+		set lib_search_path [ list \
+								  ${libs}/Front_End/Liberty/NLDM/ \
+								   ]
 		# set stdcell_mw_library  [ list ${libs}/arm/tsmc/ce018fg/sc7_base_rvt/r9p0-01eac0/milkyway/6lm/sc7_ce018fg_base_rvt ]
 
 		# -----------------------------------------------------------------------------
-		# NLDM .db filenames
+		# NLDM .lib filenames
 		# -----------------------------------------------------------------------------
-
+		set_attribute library {NangateOpenCellLibrary_typical.lib}
 		# Keyed from "db,$transistor_$voltage_$temperature"
 
 		# Order within lists must be consistent between corners to allow min/max
@@ -205,16 +208,16 @@ switch $supplyVoltage {
 		# If time allows it is possible to recharacterize the standardcells at other supply voltages.
 
 		# Standard Cells
-		set stdcell_library(db,ss_1p1v) [ list \
-												NangateOpenCellLibrary_slow.db \
+		#set stdcell_library(db,ss_1p1v) [ list \
+												NangateOpenCellLibrary_typical.db \
 				                                ]
 
-		set stdcell_library(db,tt_1p1v) [ list \
+		#set stdcell_library(db,tt_1p1v) [ list \
 				                                NangateOpenCellLibrary_typical.db \
 				                                ]
 
-		set stdcell_library(db,ff_1p1v)  [ list \
-				                                NangateOpenCellLibrary_fast.db \
+		#set stdcell_library(db,ff_1p1v)  [ list \
+				                                NangateOpenCellLibrary_typical.db \
 				                                ]
 
 		# -----------------------------------------------------------------------------
@@ -225,7 +228,7 @@ switch $supplyVoltage {
 		# Keyed from "$transistor_$voltage_$temperature"
 		set operating_condition_name(ss_1p1v) 				slow
 		set target_library_name(ss_1p1v) 					[ list \
-															NangateOpenCellLibrary_slow \
+															NangateOpenCellLibrary_typical \
 				                                			]
 
 		set operating_condition_name(tt_1p1v)				typical
@@ -235,7 +238,7 @@ switch $supplyVoltage {
 
 		set operating_condition_name(ff_1p1v)				fast
 		set target_library_name(ff_1p1v) 					[ list \
-				                                			NangateOpenCellLibrary_fast \
+				                                			NangateOpenCellLibrary_typical \
 				                                			]
     }
     X.XX {

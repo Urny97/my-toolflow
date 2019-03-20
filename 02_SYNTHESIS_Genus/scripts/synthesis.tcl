@@ -23,7 +23,8 @@ source ../scripts/design_tech.tcl
 # ------------------------------------------------------------------------------
 # Set-up Target Libraries
 # ------------------------------------------------------------------------------
-set_app_var search_path [concat . $stdcell_search_path $search_path]
+set_app_var search_path [concat . $lib_search_path] 
+#$search_path] Dit stond achteraan tussen haakjes hierboven.
 
 set_app_var synthetic_library dw_foundation.sldb
 set_app_var target_library [concat $stdcell_library(db,$slow_corner_pvt)]
