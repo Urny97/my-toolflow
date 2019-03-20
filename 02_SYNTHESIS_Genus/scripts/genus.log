@@ -1,0 +1,34 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2017 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+Version: 17.11-s014_1, built Mon Oct 09 2017
+Options: -legacy_ui 
+Date:    Wed Mar 20 15:39:46 2019
+Host:    vierre64.esat.kuleuven.be (x86_64 w/Linux 3.10.0-957.10.1.el7.x86_64) (4cores*8cpus*2physical cpus*Intel(R) Xeon(R) CPU E5440 @ 2.83GHz 6144KB) (32778472KB)
+OS:      CentOS Linux release 7.6.1810 (Core) 
+
+Checking out license: Genus_Synthesis
+
+Loading tool scripts...
+Finished loading tool scripts (12 seconds elapsed).
+
+WARNING: This version of the tool is 527 days old.
+legacy_genus:/> source synthesis.tcl
+Sourcing './synthesis.tcl' (Wed Mar 20 15:40:07 CET 2019)...
+Sourcing '../scripts/design_config.tcl' (Wed Mar 20 15:40:07 CET 2019)...
+invalid command name "set_host_options"
+legacy_genus:/> source synthesis.tcl
+Sourcing './synthesis.tcl' (Wed Mar 20 15:41:43 CET 2019)...
+Sourcing '../scripts/design_config.tcl' (Wed Mar 20 15:41:43 CET 2019)...
+invalid command name "set_host_options"
+legacy_genus:/> source synthesis.tcl
+Sourcing './synthesis.tcl' (Wed Mar 20 15:42:13 CET 2019)...
+Sourcing '../scripts/design_config.tcl' (Wed Mar 20 15:42:13 CET 2019)...
+Sourcing '../scripts/design_tech.tcl' (Wed Mar 20 15:42:13 CET 2019)...
+Technology setup file
+Setting technology for 1.1V supply
+can't read "search_path": no such variable
+legacy_genus:/> exit
+Normal exit.
