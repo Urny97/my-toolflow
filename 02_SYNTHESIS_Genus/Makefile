@@ -33,9 +33,8 @@ clean:
 synthesis: clean
 	@mkdir -p work
 	@mkdir -p logs  
-	@mkdir -p reports  
-	@mkdir -p reports/dft  
-	@mkdir -p reports/lec  
-	@mkdir -p reports/synthesis
+	@mkdir -p reports
 	@mkdir -p data
+	cd work; genus -legacy_ui -overwrite -files ../scripts/rtl.tcl -log ../logs/synthesis.log
+
 	#cd work; design_vision-xg -64bit -f ../scripts/synthesis.tcl | tee ../logs/$@.log
