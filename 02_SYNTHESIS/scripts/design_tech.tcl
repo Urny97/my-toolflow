@@ -168,7 +168,7 @@ switch $supplyVoltage {
 		  set sh_launch_dir "."
 		}
 
-		set libs                  "../../99_SRC/technology/NCSU-FreePDK45-1.4/FreePDK45"
+		set libs                  "/tmp/NangateOpenCellLibrary_PDKv1_3_v2010_12"
 
 		# -----------------------------------------------------------------------------
 		# Techfile and metal stack extract models (not used for now)
@@ -186,7 +186,7 @@ switch $supplyVoltage {
 		# -----------------------------------------------------------------------------
 
 		set stdcell_search_path [ list \
-								  ${libs}/osu_soc/lib/files/ \
+								  ${libs}/Front_End/Verilog/ \
 								   ]
 
 		# set stdcell_mw_library  [ list ${libs}/arm/tsmc/ce018fg/sc7_base_rvt/r9p0-01eac0/milkyway/6lm/sc7_ce018fg_base_rvt ]
@@ -206,15 +206,15 @@ switch $supplyVoltage {
 
 		# Standard Cells
 		set stdcell_library(db,ss_1p1v) [ list \
-												gscl45nm.db \
+												NangateOpenCellLibrary.db \
 				                                ]
 
 		set stdcell_library(db,tt_1p1v) [ list \
-				                                gscl45nm.db \
+				                                NangateOpenCellLibrary.db \
 				                                ]
 
 		set stdcell_library(db,ff_1p1v)  [ list \
-				                                gscl45nm.db \
+				                                NangateOpenCellLibrary.db \
 				                                ]
 
 		# -----------------------------------------------------------------------------
@@ -225,17 +225,17 @@ switch $supplyVoltage {
 		# Keyed from "$transistor_$voltage_$temperature"
 		set operating_condition_name(ss_1p1v) 				typical
 		set target_library_name(ss_1p1v) 					[ list \
-															gscl45nm \
+															NangateOpenCellLibrary \
 				                                			]
 
 		set operating_condition_name(tt_1p1v)				typical
 		set target_library_name(tt_1p1v) 					[ list \
-				                                			gscl45nm \
+				                                			NangateOpenCellLibrary \
 				                                			]
 
 		set operating_condition_name(ff_1p1v)				typical
 		set target_library_name(ff_1p1v) 					[ list \
-				                                			gscl45nm \
+				                                			NangateOpenCellLibrary \
 				                                			]
     }
     X.XX {

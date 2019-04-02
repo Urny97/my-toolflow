@@ -1,0 +1,7 @@
+dump -file /tmp/arne-vcd/dump.vpd
+dump -add AES128_tb
+dump -autoflush on
+dump -deltaCycle on
+dump -forceEvent on
+run
+exit

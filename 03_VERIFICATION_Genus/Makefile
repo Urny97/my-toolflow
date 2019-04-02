@@ -10,7 +10,7 @@ base_dir = $(abspath ..)
 
 test_dir = $(abspath ../99_SRC/test_benches)
 src_dir = $(abspath ../99_SRC/my_src_hdl)
-synth_dir = $(abspath ../02_SYNTHESIS/data)
+synth_dir = $(abspath ../02_SYNTHESIS_Genus/data)
 tech_dir = $(abspath /tmp/NangateOpenCellLibrary_PDKv1_3_v2010_12/Front_End/Verilog)
 test_bench = AES128_tb
 test_program = AES
@@ -57,7 +57,7 @@ ifeq ($(vhdl), TRUE)
 	vhdlan -smart_order -full64 `cat vhdl_file_list`
 endif
 	
-	$(simulator) $(test_bench) $(simulator_flags) $(compiler_directives) -sdf max:AES128_tb/DUT:../02_SYNTHESIS/data/AES128.synthesis.sdf -negdelay +neg_tchk
+	$(simulator) $(test_bench) $(simulator_flags) $(compiler_directives) -sdf max:AES128_tb/DUT:../02_SYNTHESIS_Genus/data/AES128.synthesis.sdf -negdelay +neg_tchk
 
 vpd2vcd:
 	# Convert VPD (VCD+ proprietary and binary) to IEEE VCD standard +morevhdl
