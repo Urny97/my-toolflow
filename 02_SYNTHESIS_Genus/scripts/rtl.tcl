@@ -1,8 +1,8 @@
 set project_top AES128
 
-set_attribute lib_search_path /tmp/NangateOpenCellLibrary_PDKv1_3_v2010_12/Front_End/Liberty/NLDM/
+set_attribute lib_search_path /users/students/r0622838/digital-design-flow/99_SRC/technology/NCSU-FreePDK45-1.4/FreePDK45/osu_soc/lib/files/
 
-set_attribute library ./NangateOpenCellLibrary_typical.lib
+set_attribute library ./gscl45nm.lib
 
 set_attribute init_hdl_search_path ../../99_SRC/my_src_hdl/
 
@@ -52,5 +52,3 @@ write_sdf > ../data/$project_top.synthesis.sdf
 #write -mapped > AES128_synth.v
 
 write_script > script
-
-gui_show;

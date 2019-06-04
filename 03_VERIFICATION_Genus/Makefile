@@ -11,7 +11,7 @@ base_dir = $(abspath ..)
 test_dir = $(abspath ../99_SRC/test_benches)
 src_dir = $(abspath ../99_SRC/my_src_hdl)
 synth_dir = $(abspath ../02_SYNTHESIS_Genus/data)
-tech_dir = $(abspath /tmp/NangateOpenCellLibrary_PDKv1_3_v2010_12/Front_End/Verilog)
+tech_dir = $(abspath ../99_SRC/technology/NCSU-FreePDK45-1.4/FreePDK45/osu_soc/lib/files)
 test_bench = AES128_tb
 test_program = AES
 

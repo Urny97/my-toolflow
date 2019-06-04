@@ -168,7 +168,9 @@ switch $supplyVoltage {
 		  set sh_launch_dir "."
 		}
 
-		set libs                  "/tmp/NangateOpenCellLibrary_PDKv1_3_v2010_12"
+		set libs "/users/students/r0622838/digital-design-flow-aes/99_SRC/technology/NCSU-FreePDK45-1.4/FreePDK45"
+
+		#set libs "/tmp/NangateOpenCellLibrary_PDKv1_3_v2010_12" 
 
 		# -----------------------------------------------------------------------------
 		# Techfile and metal stack extract models (not used for now)
@@ -186,7 +188,12 @@ switch $supplyVoltage {
 		# -----------------------------------------------------------------------------
 
 		set stdcell_search_path [ list \
-								  ${libs}/Front_End/Verilog/ \
+								  ${libs}/Front_End/Liberty/NLDM \
+								   ]
+
+
+		set stdcell_search_path [ list \
+								  ${libs}/osu_soc/lib/files \
 								   ]
 
 		# set stdcell_mw_library  [ list ${libs}/arm/tsmc/ce018fg/sc7_base_rvt/r9p0-01eac0/milkyway/6lm/sc7_ce018fg_base_rvt ]
@@ -205,16 +212,31 @@ switch $supplyVoltage {
 		# If time allows it is possible to recharacterize the standardcells at other supply voltages.
 
 		# Standard Cells
-		set stdcell_library(db,ss_1p1v) [ list \
+
+		# Nangate
+		#set stdcell_library(db,ss_1p1v) [ list \
 												NangateOpenCellLibrary.db \
 				                                ]
 
-		set stdcell_library(db,tt_1p1v) [ list \
+		#set stdcell_library(db,tt_1p1v) [ list \
 				                                NangateOpenCellLibrary.db \
 				                                ]
 
-		set stdcell_library(db,ff_1p1v)  [ list \
+		#set stdcell_library(db,ff_1p1v)  [ list \
 				                                NangateOpenCellLibrary.db \
+				                                ]
+
+		# FreePDK45nm
+		set stdcell_library(db,ss_1p1v) [ list \
+												gscl45nm.db \
+				                                ]
+
+		set stdcell_library(db,tt_1p1v) [ list \
+				                                gscl45nm.db \
+				                                ]
+
+		set stdcell_library(db,ff_1p1v)  [ list \
+				                                gscl45nm.db \
 				                                ]
 
 		# -----------------------------------------------------------------------------
@@ -223,19 +245,36 @@ switch $supplyVoltage {
 		# Only typical operating condition available at this point
 		
 		# Keyed from "$transistor_$voltage_$temperature"
+		# Nangate
+		#set operating_condition_name(ss_1p1v) 				typical
+		#set target_library_name(ss_1p1v) 					[ list \
+															NangateOpenCellLibrary \
+				                                			]
+
+		#set operating_condition_name(tt_1p1v)				typical
+		#set target_library_name(tt_1p1v) 					[ list \
+				                                			NangateOpenCellLibrary \
+				                                			]
+
+		#set operating_condition_name(ff_1p1v)				typical
+		#set target_library_name(ff_1p1v) 					[ list \
+				                                			NangateOpenCellLibrary \
+				                                			]
+
+		# FreePDK45nm
 		set operating_condition_name(ss_1p1v) 				typical
 		set target_library_name(ss_1p1v) 					[ list \
-															NangateOpenCellLibrary \
+															gscl45nm \
 				                                			]
 
 		set operating_condition_name(tt_1p1v)				typical
 		set target_library_name(tt_1p1v) 					[ list \
-				                                			NangateOpenCellLibrary \
+				                                			gscl45nm \
 				                                			]
 
 		set operating_condition_name(ff_1p1v)				typical
 		set target_library_name(ff_1p1v) 					[ list \
-				                                			NangateOpenCellLibrary \
+				                                			gscl45nm \
 				                                			]
     }
     X.XX {

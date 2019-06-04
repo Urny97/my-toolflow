@@ -11,7 +11,8 @@ base_dir = $(abspath ..)
 test_dir = $(abspath ../99_SRC/test_benches)
 src_dir = $(abspath ../99_SRC/my_src_hdl)
 synth_dir = $(abspath ../02_SYNTHESIS/data)
-tech_dir = $(abspath /tmp/NangateOpenCellLibrary_PDKv1_3_v2010_12/Front_End/Verilog)
+#tech_dir = $(abspath /tmp/NangateOpenCellLibrary_PDKv1_3_v2010_12/Front_End/Verilog)
+tech_dir = $(abspath ../99_SRC/technology/NCSU-FreePDK45-1.4/FreePDK45/osu_soc/lib/files)
 test_bench = AES128_tb
 test_program = AES
 
@@ -25,7 +26,7 @@ vhdl = TRUE
 # define the simulator
 simulator = vcs
 # define simulator options
-simulator_flags = -full64 -timescale=1ns/1ps -debug_all
+simulator_flags = -full64 -timescale=1ns/1ps -debug_all +notimingcheck
 # define additional directives that are used to set options in the test_bench at compile time
 # Using DUMP_VCD allows to based power estimations on actual signal activity => more accurate simulations
 # However VCD files consume a lot of diskspace and should therefore only be made on the local volume1 of the machine you are using.
