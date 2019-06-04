@@ -44,8 +44,9 @@ architecture Behavioral of AES128 is
 		  clock: in std_logic;
 			reset: in std_logic;
 			ce: in std_logic;
-			key: in std_logic_vector(127 downto 0);
-			key_out: out std_logic_vector(127 downto 0)
+      key: in std_logic_vector(127 downto 0);
+      done: in std_logic;
+      key_out: out std_logic_vector(127 downto 0)
     );
   end component;
 
@@ -82,7 +83,7 @@ begin
 
   -- instantiaties van componenten
   KeyS: KeyScheduler port map(rcon_contr_rcon_keys, clock, reset, ce, key,
-                            key_out_ARK_in);
+                            done_sign, key_out_ARK_in);
   Ctl_FSM: Control_FSM port map(clock, reset, ce, rcon_contr_rcon_keys,
                            contr_out_ARK_mux_sel, contr_out_DO_mux_sel,
                            done_sign, clear_sign, hold_data_out_sign,
@@ -96,10 +97,10 @@ begin
   done <= done_sign;
 
   -- ARK mux
-  ARK_mux: process(contr_out_ARK_mux_sel, DI_reg_out, MC_out_ARK_mux_in, SR_out_MC_in)
+  ARK_mux: process(contr_out_ARK_mux_sel, data_in, MC_out_ARK_mux_in, SR_out_MC_in)
   begin
     case contr_out_ARK_mux_sel is
-      when "00" => ARK_mux_out_ARK_in <= DI_reg_out;
+      when "00" => ARK_mux_out_ARK_in <= data_in;
       when "01" => ARK_mux_out_ARK_in <= MC_out_ARK_mux_in;
       when "11" => ARK_mux_out_ARK_in <= SR_out_MC_in;
       when others => ARK_mux_out_ARK_in <= (others => '0');
@@ -107,17 +108,17 @@ begin
   end process;
 
   -- DataOut mux
-  DO_mux: process(contr_out_DO_mux_sel, DO_reg_out)
+  DO_mux: process(done_sign, ARK_out_reg_in)
   begin
-    case contr_out_DO_mux_sel is
+    case done_sign is
       when '0' => final_data_out <= (others => '0');
-      when '1' => final_data_out <= DO_reg_out;
+      when '1' => final_data_out <= ARK_out_reg_in;
       when others => final_data_out <= (others => '0');
     end case;
   end process;
 
   -- SB_reg
-  SB_reg: process(clock, reset, clear_sign, ARK_out_reg_in)
+  SB_reg: process(clock, reset)
   begin
     if reset = '1' then
       reg_out_SB_in <= (others => '0');
@@ -125,36 +126,10 @@ begin
       if ce = '1' then
         if clear_sign = '1' then
           reg_out_SB_in <= (others => '0');
+        elsif done_sign = '1' then
+          reg_out_SB_in <= reg_out_SB_in;
         else
           reg_out_SB_in <= ARK_out_reg_in;
-        end if;
-      end if;
-    end if;
-  end process;
-
-  --data_in_reg
-  DI_reg: process(clock, reset, read_data_in_sign)
-  begin
-    if reset = '1' then
-      DI_reg_out <= (others => '0');
-    elsif rising_edge(clock) then
-      if ce = '1' then
-        if read_data_in_sign = '1' then
-          DI_reg_out <= data_in;
-        end if;
-      end if;
-    end if;
-  end process;
-
-  --data_out_reg
-  DO_reg: process(clock, reset, ARK_out_reg_in, hold_data_out_sign)
-  begin
-    if reset = '1' then
-      DO_reg_out <= (others => '0');
-    elsif rising_edge(clock) then
-      if ce = '1' then  
-        if hold_data_out_sign = '1' then
-          DO_reg_out <= ARK_out_reg_in;
         end if;
       end if;
     end if;

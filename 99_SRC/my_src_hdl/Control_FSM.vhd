@@ -15,7 +15,7 @@ end Control_FSM;
 
 architecture Behavioural of Control_FSM is
 
-  type tStates is (sIdle, sFirstRound, sLoopUntil10, sLastRound, sDone);
+  type tStates is (sIdle, sFirstRound, sLoopUntil9, sLastRound, sDone);
   -- Idle: de chip doet niets
   -- sFirstRound: Plain_text wordt een eerste ronde geëncodeerd
   -- LoopUntil9: data loopt negen keer door de verschillende codeerstappen
@@ -41,7 +41,7 @@ architecture Behavioural of Control_FSM is
       rcon_reg <= "0000";
     elsif rising_edge(clock) then
       if ce = '1' and count_enable = '1' then
-        if rcon_reg = "1011" then
+        if rcon_reg = "1010" then
           rcon_reg <= "0000";
         else
           rcon_reg <= rcon_reg + 1;
@@ -82,7 +82,7 @@ architecture Behavioural of Control_FSM is
         when sFirstRound =>
             if ce = '1' then
               if rcon_reg = "0001" then
-                nxtState <= sLoopUntil10;
+                nxtState <= sLoopUntil9;
               else
                 nxtState <= curState;
               end if;
@@ -90,9 +90,9 @@ architecture Behavioural of Control_FSM is
               nxtState <= curState;
             end if;
 
-        when sLoopUntil10 =>
+        when sLoopUntil9 =>
             if ce = '1' then
-              if rcon_reg = "1010" then
+              if rcon_reg = "1001" then
                 nxtState <= sLastRound;
               else
                 nxtState <= curState;
@@ -136,11 +136,11 @@ architecture Behavioural of Control_FSM is
                           clear_sign <= '0'; count_enable <= '1'; 
                           hold_data_out_sign <= '0'; read_data_in_sign <= '1';
 
-      when sLoopUntil10 => DO_mux_sel <= '0'; ARK_mux_sel <= "01"; done_sign <= '0';
+      when sLoopUntil9 => DO_mux_sel <= '0'; ARK_mux_sel <= "01"; done_sign <= '0';
                           clear_sign <= '0'; count_enable <= '1'; 
                           hold_data_out_sign <= '0'; read_data_in_sign <= '0';
 
-      when sLastRound => DO_mux_sel <= '1'; ARK_mux_sel <= "11"; done_sign <= '0';
+      when sLastRound => DO_mux_sel <= '0'; ARK_mux_sel <= "01"; done_sign <= '0';
                          clear_sign <= '0'; count_enable <= '1'; 
                          hold_data_out_sign <= '1'; read_data_in_sign <= '0';
 

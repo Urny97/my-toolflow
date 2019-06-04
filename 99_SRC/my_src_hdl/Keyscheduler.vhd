@@ -6,11 +6,12 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity Keyscheduler is 
 	port( roundcounter:	 	in STD_LOGIC_VECTOR(3 downto 0);
-			clock:            in std_logic; 
-			reset:            in std_logic;
-			ce:            in std_logic;
-			key:    	 			in std_logic_vector(127 downto 0);
-			key_out:				out std_logic_vector(127 downto 0)
+			clock:          in std_logic; 
+			reset:          in std_logic;
+			ce:             in std_logic;
+			key:    	 	in std_logic_vector(127 downto 0);
+			done:			in std_logic;
+			key_out:		out std_logic_vector(127 downto 0)
 	);
 end Keyscheduler;
 
@@ -27,7 +28,6 @@ architecture Behavioral of Keyscheduler is
 	signal out_rotbytes, out_BS_key, out_rcon: std_logic_vector(31 downto 0);
 	signal rcon: std_logic_vector(7 downto 0);
 	signal address : std_logic_vector(5 downto 0):= "000000";
-	signal done_s: std_logic;
 	signal we_internal: std_logic;
 	signal bigcounter: std_logic_vector(31 downto 0);
 
@@ -94,7 +94,9 @@ begin
 		else
 			if rising_edge(clock) then
 				if ce = '1' then 
-					if roundcounter < "0001" then 
+					if done = '1' then
+						key_reg <= key_reg;
+					elsif roundcounter < "0001" then 
 						key_reg <= key;
 					else 
 						key_reg <= roundkey;
