@@ -19,10 +19,10 @@ package PKG_AES128 is
 
   type T_TESTS is array(1 to 256) of integer;
 
-  component ByteSub is
+  component AES_Sbox_Canright is
     port( 
-      BS_in :in std_logic_vector(7 downto 0);
-      BS_out :out std_logic_vector(7 downto 0)
+      a :in std_logic_vector(7 downto 0);
+      q :out std_logic_vector(7 downto 0)
     );
   end component;
 
