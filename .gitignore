@@ -10,6 +10,7 @@
 /01_VERIFICATION/*.vpd 
 /01_VERIFICATION/vhdl_file_list 
 /01_VERIFICATION/64/
+/01_VERIFICATION/testreport.txt
 /02_SYNTHESIS/work/
 /02_SYNTHESIS/logs/
 /02_SYNTHESIS/data/
@@ -26,6 +27,7 @@ vivado*
 02_SYNTHESIS_Genus/logs/
 02_SYNTHESIS_Genus/reports/
 02_SYNTHESIS_Genus/work/
+03_VERIFICATION/testreport.txt
 03_VERIFICATION/.vlogansetup.args
 03_VERIFICATION/.vlogansetup.env
 03_VERIFICATION/64/

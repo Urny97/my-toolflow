@@ -27,12 +27,21 @@ set search_path [ concat $search_path $proj_vhdl ]
 set vhdl_files [ list \
 				        AddRoundKey.vhd \
 		                        AES128.vhd \
-		                        bytesub.vhd \
+		                        SubBytes.vhd \
 		                        Control_FSM.vhd \
 		                        Keyscheduler.vhd \
 		                        mixcolumn.vhd \
 		                        shiftrow.vhd \
-		                        SubBytes.vhd \
+		                        AES_Sbox_Canright.vhd \
+		                        GF_INV_4.vhd \
+		                        GF_INV_8.vhd \
+		                        GF_MULS_2.vhd \
+		                        GF_MULS_4.vhd \
+		                        GF_MULS_SCL_2.vhd \
+		                        GF_SCLW_2.vhd \
+		                        GF_SCLW2_2.vhd \
+		                        GF_SQ_2.vhd \
+		                        GF_SQ_SCL_4.vhd \
     				]			
 
 set vhdl_image [ concat $vhdl_files]

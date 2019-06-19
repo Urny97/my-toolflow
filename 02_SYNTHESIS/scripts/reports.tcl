@@ -77,7 +77,7 @@ report_clock_gating -multi_stage \
                     -ungated \
   > ../reports/synthesis/${rm_project_top}.clock_gating
 
-report_operand_isolation -verbose > \
+#report_operand_isolation -verbose > \
   ../reports/synthesis/${rm_project_top}.operand_isolation
 
 report_clock_tree -summary \
