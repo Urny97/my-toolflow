@@ -8,8 +8,7 @@ entity Control_FSM is
     clock, reset, ce: in STD_LOGIC;
     roundcounter: out STD_LOGIC_VECTOR(3 downto 0);
     ARK_mux_sel: out STD_LOGIC_VECTOR(1 downto 0);
-    DO_mux_sel, done, clear, hold_data_out,
-    read_data_in: out STD_LOGIC
+    done, clear: out STD_LOGIC
   );
 end Control_FSM;
 
@@ -24,15 +23,12 @@ architecture Behavioural of Control_FSM is
 
   signal curState, nxtState: tStates;
   signal rcon_reg: STD_LOGIC_VECTOR(3 downto 0) := "0000";
-  signal done_sign, count_enable, clear_sign, hold_data_out_sign,
-  read_data_in_sign: STD_LOGIC;
+  signal done_sign, count_enable, clear_sign: STD_LOGIC;
 
   begin
     roundcounter <= rcon_reg;
     done <= done_sign;
     clear <= clear_sign;
-    hold_data_out <= hold_data_out_sign;
-    read_data_in <= read_data_in_sign;
 
 -- Increment Counter
   incr_ctr: process(clock, reset)
@@ -128,25 +124,20 @@ architecture Behavioural of Control_FSM is
   Control_out: process(curState)
   begin
     case curState is
-      when sIdle => DO_mux_sel <= '0'; ARK_mux_sel <= "00"; done_sign <= '0'; 
+      when sIdle => ARK_mux_sel <= "00"; done_sign <= '0'; 
                     clear_sign <= '1'; count_enable <= '0';
-                    hold_data_out_sign <= '0'; read_data_in_sign <= '0';
 
-      when sFirstRound => DO_mux_sel <= '0'; ARK_mux_sel <= "00"; done_sign <= '0';
-                          clear_sign <= '0'; count_enable <= '1'; 
-                          hold_data_out_sign <= '0'; read_data_in_sign <= '1';
+      when sFirstRound => ARK_mux_sel <= "00"; done_sign <= '0';
+                          clear_sign <= '0'; count_enable <= '1';
 
-      when sLoopUntil9 => DO_mux_sel <= '0'; ARK_mux_sel <= "01"; done_sign <= '0';
-                          clear_sign <= '0'; count_enable <= '1'; 
-                          hold_data_out_sign <= '0'; read_data_in_sign <= '0';
+      when sLoopUntil9 => ARK_mux_sel <= "01"; done_sign <= '0';
+                          clear_sign <= '0'; count_enable <= '1';
 
-      when sLastRound => DO_mux_sel <= '0'; ARK_mux_sel <= "01"; done_sign <= '0';
-                         clear_sign <= '0'; count_enable <= '1'; 
-                         hold_data_out_sign <= '1'; read_data_in_sign <= '0';
+      when sLastRound => ARK_mux_sel <= "01"; done_sign <= '0';
+                         clear_sign <= '0'; count_enable <= '1';
 
-      when sDone => DO_mux_sel <= '1'; ARK_mux_sel <= "11"; done_sign <= '1';
-                    clear_sign <= '0'; count_enable <= '0'; 
-                    hold_data_out_sign <= '0'; read_data_in_sign <= '0';
+      when sDone => ARK_mux_sel <= "11"; done_sign <= '1';
+                    clear_sign <= '0'; count_enable <= '0';
     end case;
   end process;
 

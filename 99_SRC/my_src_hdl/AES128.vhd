@@ -25,16 +25,14 @@ architecture Behavioral of AES128 is
 
   signal rcon_contr_rcon_keys: STD_LOGIC_VECTOR(3 downto 0);
   signal contr_out_ARK_mux_sel: STD_LOGIC_VECTOR(1 downto 0);
-  signal done_sign, clear_sign, hold_data_out_sign,
-         contr_out_DO_mux_sel, read_data_in_sign: STD_LOGIC;
+  signal done_sign, clear_sign: STD_LOGIC;
 
   component Control_FSM is
     port(
     clock, reset, ce: in STD_LOGIC;
     roundcounter: out STD_LOGIC_VECTOR(3 downto 0);
     ARK_mux_sel: out STD_LOGIC_VECTOR(1 downto 0);
-    DO_mux_sel, done, clear, hold_data_out,
-    read_data_in: out STD_LOGIC
+    done, clear: out STD_LOGIC
     );
   end component;
 
@@ -83,11 +81,9 @@ begin
 
   -- instantiaties van componenten
   KeyS: KeyScheduler port map(rcon_contr_rcon_keys, clock, reset, ce, key,
-                            done_sign, key_out_ARK_in);
+                              done_sign, key_out_ARK_in);
   Ctl_FSM: Control_FSM port map(clock, reset, ce, rcon_contr_rcon_keys,
-                           contr_out_ARK_mux_sel, contr_out_DO_mux_sel,
-                           done_sign, clear_sign, hold_data_out_sign,
-                           read_data_in_sign);
+                                contr_out_ARK_mux_sel, done_sign, clear_sign);
   ARK: AddRoundKey port map(key_out_ARK_in, ARK_mux_out_ARK_in, ARK_out_reg_in);
   SB: SubBytes port map(reg_out_SB_in, SB_out_shiftrow_in);
   SR: ShiftRow port map(SB_out_shiftrow_in, SR_out_MC_in);
