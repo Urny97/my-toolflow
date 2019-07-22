@@ -51,3 +51,5 @@ vivado*
 04_POWER/logs/
 04_POWER/reports/
 04_POWER/work/
+command.log
+filenames.log
