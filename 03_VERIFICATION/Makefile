@@ -10,6 +10,7 @@ base_dir = $(abspath ..)
 
 test_dir = $(abspath ../99_SRC/test_benches)
 src_dir = $(abspath ../99_SRC/my_src_hdl)
+#src_dir = $(abspath ../99_SRC/my_src_hdl_opt)
 synth_dir = $(abspath ../02_SYNTHESIS/data)
 #tech_dir = $(abspath /tmp/NangateOpenCellLibrary_PDKv1_3_v2010_12/Front_End/Verilog)
 tech_dir = $(abspath ../99_SRC/technology/NCSU-FreePDK45-1.4/FreePDK45/osu_soc/lib/files)
