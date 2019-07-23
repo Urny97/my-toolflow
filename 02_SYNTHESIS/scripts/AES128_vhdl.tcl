@@ -10,8 +10,10 @@
 
 # path for vhdl files
 # Only files to be synthesized should be in the verilog directory!!!
-set proj_vhdl    ../../99_SRC/my_src_hdl
+
+#set proj_vhdl    ../../99_SRC/my_src_hdl
 #set proj_vhdl    ../../99_SRC/my_src_hdl_opt
+set proj_vhdl    ../../99_SRC/src_hdl_32_bit
 set search_path [ concat $search_path $proj_vhdl ]
 
 
