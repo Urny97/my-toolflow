@@ -12,7 +12,7 @@ src_dir = $(abspath ../99_SRC/src_hdl_32_bit)
 test_dir = $(abspath ../99_SRC/test_benches)
 test_bench = AES128_tb
 
-verilog = FALSE
+verilog = TRUE
 vhdl = TRUE
 
 # Direct this path to a directory that has "unlimited" disk space
@@ -43,7 +43,7 @@ debug: analyze elaborate dve
 analyze:
 ifeq ($(verilog), TRUE)
 	echo $(src_dir)/*.v > verilog_file_list
-	echo $(test_dir)/*.v >> verilog_file_list
+	#echo $(test_dir)/*.v >> verilog_file_list
 	vlogan -full64 `cat verilog_file_list`
 endif
 ifeq ($(vhdl), TRUE)
