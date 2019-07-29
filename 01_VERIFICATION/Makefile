@@ -43,7 +43,6 @@ debug: analyze elaborate dve
 analyze:
 ifeq ($(verilog), TRUE)
 	echo $(src_dir)/*.v > verilog_file_list
-	#echo $(test_dir)/*.v >> verilog_file_list
 	vlogan -full64 `cat verilog_file_list`
 endif
 ifeq ($(vhdl), TRUE)

@@ -42,7 +42,6 @@ set search_path [ concat $search_path $proj_vhdl ]
 				        		AddRoundKey.vhd \
 		                        AES128.vhd \
 		                        SubBytes.vhd \
-		                        bytesub.vhd \
 		                        Control_FSM.vhd \
 		                        Keyscheduler.vhd \
 		                        mixcolumn.vhd \
