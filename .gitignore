@@ -11,6 +11,8 @@
 /01_VERIFICATION/vhdl_file_list 
 /01_VERIFICATION/64/
 /01_VERIFICATION/testreport.txt
+/01_VERIFICATION/.vlogansetup.args
+/01_VERIFICATION/AN.DB/
 /02_SYNTHESIS/work/
 /02_SYNTHESIS/logs/
 /02_SYNTHESIS/data/
