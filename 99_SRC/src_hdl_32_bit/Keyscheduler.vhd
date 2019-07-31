@@ -22,11 +22,11 @@ architecture Behavioral of Keyscheduler is
 	);
 	end component;
 	
-	signal roundkey: std_logic_vector(127 downto 0) := (others => '0');
-	signal key_reg: std_logic_vector(127 downto 0):= (others => '0');
+	signal roundkey: std_logic_vector(127 downto 0);
+	signal key_reg: std_logic_vector(127 downto 0);
 	signal out_rotbytes, out_BS_key, out_rcon: std_logic_vector(31 downto 0);
 	signal rcon: std_logic_vector(7 downto 0);
-	signal address : std_logic_vector(5 downto 0):= "000000";
+	signal address : std_logic_vector(5 downto 0);
 	signal done_s: std_logic;
 	signal we_internal: std_logic;
 	signal bigcounter: std_logic_vector(31 downto 0);
