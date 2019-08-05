@@ -219,6 +219,8 @@ set compile_filter_prune_seq_cells false
 compile 
 #-gate_clock
 
+#optimize_register
+
 # ------------------------------------------------------------------------------
 # Change names before output
 # ------------------------------------------------------------------------------

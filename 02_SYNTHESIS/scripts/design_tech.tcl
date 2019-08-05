@@ -168,9 +168,9 @@ switch $supplyVoltage {
 		  set sh_launch_dir "."
 		}
 
-		set libs "/users/students/r0622838/digital-design-flow-aes/99_SRC/technology/NCSU-FreePDK45-1.4/FreePDK45"
+		#set libs "/users/students/r0622838/digital-design-flow-aes/99_SRC/technology/NCSU-FreePDK45-1.4/FreePDK45"
 
-		#set libs "/tmp/NangateOpenCellLibrary_PDKv1_3_v2010_12" 
+		set libs "/tmp/NangateOpenCellLibrary_PDKv1_3_v2010_12" 
 
 		# -----------------------------------------------------------------------------
 		# Techfile and metal stack extract models (not used for now)
@@ -192,7 +192,7 @@ switch $supplyVoltage {
 								   ]
 
 
-		set stdcell_search_path [ list \
+		#set stdcell_search_path [ list \
 								  ${libs}/osu_soc/lib/files \
 								   ]
 
@@ -214,30 +214,30 @@ switch $supplyVoltage {
 		# Standard Cells
 
 		# Nangate
-		#set stdcell_library(db,ss_1p1v) [ list \
-												NangateOpenCellLibrary.db \
-				                                ]
-
-		#set stdcell_library(db,tt_1p1v) [ list \
-				                                NangateOpenCellLibrary.db \
-				                                ]
-
-		#set stdcell_library(db,ff_1p1v)  [ list \
-				                                NangateOpenCellLibrary.db \
-				                                ]
-
-		# FreePDK45nm
 		set stdcell_library(db,ss_1p1v) [ list \
-												gscl45nm.db \
+												NangateOpenCellLibrary_typical.db \
 				                                ]
 
 		set stdcell_library(db,tt_1p1v) [ list \
-				                                gscl45nm.db \
+				                                NangateOpenCellLibrary_typical.db \
 				                                ]
 
 		set stdcell_library(db,ff_1p1v)  [ list \
-				                                gscl45nm.db \
+				                                NangateOpenCellLibrary_typical.db \
 				                                ]
+
+		# FreePDK45nm
+		# set stdcell_library(db,ss_1p1v) [ list \
+		# 										gscl45nm.db \
+		# 		                                ]
+
+		# set stdcell_library(db,tt_1p1v) [ list \
+		# 		                                gscl45nm.db \
+		# 		                                ]
+
+		# set stdcell_library(db,ff_1p1v)  [ list \
+		# 		                                gscl45nm.db \
+		# 		                                ]
 
 		# -----------------------------------------------------------------------------
 		# Operating conditions
@@ -246,36 +246,36 @@ switch $supplyVoltage {
 		
 		# Keyed from "$transistor_$voltage_$temperature"
 		# Nangate
-		#set operating_condition_name(ss_1p1v) 				typical
-		#set target_library_name(ss_1p1v) 					[ list \
-															NangateOpenCellLibrary \
-				                                			]
-
-		#set operating_condition_name(tt_1p1v)				typical
-		#set target_library_name(tt_1p1v) 					[ list \
-				                                			NangateOpenCellLibrary \
-				                                			]
-
-		#set operating_condition_name(ff_1p1v)				typical
-		#set target_library_name(ff_1p1v) 					[ list \
-				                                			NangateOpenCellLibrary \
-				                                			]
-
-		# FreePDK45nm
 		set operating_condition_name(ss_1p1v) 				typical
 		set target_library_name(ss_1p1v) 					[ list \
-															gscl45nm \
+															NangateOpenCellLibrary_typical \
 				                                			]
 
 		set operating_condition_name(tt_1p1v)				typical
 		set target_library_name(tt_1p1v) 					[ list \
-				                                			gscl45nm \
+				                                			NangateOpenCellLibrary_typical \
 				                                			]
 
 		set operating_condition_name(ff_1p1v)				typical
 		set target_library_name(ff_1p1v) 					[ list \
-				                                			gscl45nm \
+				                                			NangateOpenCellLibrary_typical \
 				                                			]
+
+		# FreePDK45nm
+		# set operating_condition_name(ss_1p1v) 				typical
+		# set target_library_name(ss_1p1v) 					[ list \
+		# 													gscl45nm \
+		# 		                                			]
+
+		# set operating_condition_name(tt_1p1v)				typical
+		# set target_library_name(tt_1p1v) 					[ list \
+		# 		                                			gscl45nm \
+		# 		                                			]
+
+		# set operating_condition_name(ff_1p1v)				typical
+		# set target_library_name(ff_1p1v) 					[ list \
+		# 		                                			gscl45nm \
+		# 		                                			]
     }
     X.XX {
     

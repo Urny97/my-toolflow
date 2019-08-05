@@ -11,9 +11,9 @@
 # path for vhdl files
 # Only files to be synthesized should be in the verilog directory!!!
 
-#set proj_vhdl    ../../99_SRC/my_src_hdl
+set proj_vhdl    ../../99_SRC/my_src_hdl
 #set proj_vhdl    ../../99_SRC/my_src_hdl_opt
-set proj_vhdl    ../../99_SRC/src_hdl_32_bit
+#set proj_vhdl    ../../99_SRC/src_hdl_32_bit
 set search_path [ concat $search_path $proj_vhdl ]
 
 
@@ -27,7 +27,7 @@ set search_path [ concat $search_path $proj_vhdl ]
 # -----------------------------------------------------------------------------------
 
 # Selection of all the files/modules that should be synthesized
-#set vhdl_files [ list \
+set vhdl_files [ list \
 				        		AddRoundKey.vhd \
 		                        AES128.vhd \
 		                        SubBytes.vhd \
@@ -58,7 +58,7 @@ set search_path [ concat $search_path $proj_vhdl ]
 		                        GF_SQ_SCL_4.vhd \
     				]
 
-set vhdl_files [ list \
+#set vhdl_files [ list \
 				        		AddRoundKey32.v \
 		                        AES128.v \
 		                        subbytes32.v \

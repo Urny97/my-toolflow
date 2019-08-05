@@ -6,13 +6,13 @@
 default: all
 
 base_dir = $(abspath ..)
-#src_dir = $(abspath ../99_SRC/my_src_hdl)
+src_dir = $(abspath ../99_SRC/my_src_hdl)
 #src_dir = $(abspath ../99_SRC/my_src_hdl_opt)
-src_dir = $(abspath ../99_SRC/src_hdl_32_bit)
+#src_dir = $(abspath ../99_SRC/src_hdl_32_bit)
 test_dir = $(abspath ../99_SRC/test_benches)
 test_bench = AES128_tb
 
-verilog = TRUE
+verilog = FALSE
 vhdl = TRUE
 
 # Direct this path to a directory that has "unlimited" disk space
