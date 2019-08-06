@@ -104,13 +104,13 @@ switch $supplyVoltage {
 		# Input driving cell models
 		# -----------------------------------------------------------------------------
 
-		set driving_cell            BUFX4;						# The driving cell for all inputs
+		set driving_cell            BUF_X4;						# The driving cell for all inputs
 		set driving_from_pin        A;							# Input of the driving cell
-		set driving_pin             Y;							# The output pin of the driving cell
+		set driving_pin             Z;							# The output pin of the driving cell
 
-		set clock_driving_cell      CLKBUF3;					# The driving cell for clock ports
+		set clock_driving_cell      CLKBUF_X3;					# The driving cell for clock ports
 		set clock_driving_from_pin  A;							# The input pin of the clock driving cell
-		set clock_driving_pin       Y;							# The output pin of the clock driving cell
+		set clock_driving_pin       Z;							# The output pin of the clock driving cell
 		
 		# Current version of the freepdk does not contain a clock gating cell
 		# This cell could be added if required
@@ -215,7 +215,7 @@ switch $supplyVoltage {
 
 		# Nangate
 		set stdcell_library(db,ss_1p1v) [ list \
-												NangateOpenCellLibrary_typical.db \
+												NangateOpenCellLibrary_slow.db \
 				                                ]
 
 		set stdcell_library(db,tt_1p1v) [ list \
@@ -223,7 +223,7 @@ switch $supplyVoltage {
 				                                ]
 
 		set stdcell_library(db,ff_1p1v)  [ list \
-				                                NangateOpenCellLibrary_typical.db \
+				                                NangateOpenCellLibrary_fast.db \
 				                                ]
 
 		# FreePDK45nm
@@ -248,17 +248,17 @@ switch $supplyVoltage {
 		# Nangate
 		set operating_condition_name(ss_1p1v) 				typical
 		set target_library_name(ss_1p1v) 					[ list \
-															NangateOpenCellLibrary_typical \
+															NangateOpenCellLibrary \
 				                                			]
 
 		set operating_condition_name(tt_1p1v)				typical
 		set target_library_name(tt_1p1v) 					[ list \
-				                                			NangateOpenCellLibrary_typical \
+				                                			NangateOpenCellLibrary \
 				                                			]
 
 		set operating_condition_name(ff_1p1v)				typical
 		set target_library_name(ff_1p1v) 					[ list \
-				                                			NangateOpenCellLibrary_typical \
+				                                			NangateOpenCellLibrary \
 				                                			]
 
 		# FreePDK45nm

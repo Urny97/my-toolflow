@@ -27,5 +27,5 @@ puts "Constrained Resets"
 # Define Signal Constraints
 # ------------------------------------------------------------------------------
 
-set_output_delay -clock VCLK  -max $cycle50 $output_ports
-set_input_delay -clock VCLK  -max $cycle50 $input_ports
+set_output_delay -clock VCLK  -max $cycle40 $output_ports
+set_input_delay -clock VCLK  -max $cycle40 $input_ports
