@@ -28,23 +28,24 @@ vhdl = TRUE
 # define the simulator
 simulator = vcs
 # define simulator options
-simulator_flags = -full64 -timescale=1ns/1ps -debug_all
+simulator_flags = -full64 -timescale=1ns/1ps -debug_all +vcs+lic+wait +vc+list -negdelay +notimingcheck -sdf max:AES128_tb/DUT:../02_SYNTHESIS/data/AES128.synthesis.sdf
 # define additional directives that are used to set options in the test_bench at compile time
 # Using DUMP_VCD allows to based power estimations on actual signal activity => more accurate simulations
 # However VCD files consume a lot of diskspace and should therefore only be made on the local volume1 of the machine you are using.
-compiler_directives =
+compiler_directives = 
+# -negdelay +neg_tchk
 
 
 #mem_gen = $(base_dir)/vsim/vlsi_mem_gen
 sim_dir = .
 
 read_files:
-	find $(tech_dir) -name '*.vhd' >> vhdl_file_list
-	find $(synth_dir) -name '*.vhd' >> vhdl_file_list
+	find $(tech_dir) -name '*.vhd' > vhdl_file_list
+	#find $(synth_dir) -name '*.vhd' >> vhdl_file_list
 	find $(test_dir) -name '*.vhd' >> vhdl_file_list
 	find $(src_dir) -name 'PKG_AES128.vhd' >> vhdl_file_list
 
-	find $(tech_dir) -name '*.v' >> verilog_file_list
+	find $(tech_dir) -name '*.v' > verilog_file_list
 	find $(synth_dir) -name '*.v' >> verilog_file_list
 	find $(test_dir) -name '*.v' >> verilog_file_list
 
@@ -54,13 +55,13 @@ compile: clean read_files
 	@mkdir -p /tmp/arne-vcd
 
 ifeq ($(verilog), TRUE)
-	vlogan -full64 `cat verilog_file_list`
+	vlogan -full64 +v2k `cat verilog_file_list`
 endif
 ifeq ($(vhdl), TRUE)
 	vhdlan -smart_order -full64 `cat vhdl_file_list`
 endif
 	
-	$(simulator) $(test_bench) $(simulator_flags) $(compiler_directives) -sdf max:AES128_tb/DUT:../02_SYNTHESIS/data/AES128.synthesis.sdf -negdelay +neg_tchk
+	$(simulator) $(test_bench) $(simulator_flags) $(compiler_directives)
 
 vpd2vcd:
 	# Convert VPD (VCD+ proprietary and binary) to IEEE VCD standard +morevhdl
