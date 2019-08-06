@@ -33,17 +33,19 @@ architecture Behavioural of Control_FSM is
 -- Increment Counter
   incr_ctr: process(clock, reset)
   begin
-    if reset = '1' then
-      rcon_reg <= "0000";
-    elsif rising_edge(clock) then
-      if ce = '1' and count_enable = '1' then
-        if rcon_reg = "1010" then
-          rcon_reg <= "0000";
-        else
-          rcon_reg <= rcon_reg + 1;
-        end if;
+    if rising_edge(clock) then
+      if reset = '1' then
+        rcon_reg <= "0000";
       else
-        rcon_reg <= rcon_reg;
+        if ce = '1' and count_enable = '1' then
+          if rcon_reg = "1010" then
+            rcon_reg <= "0000";
+          else
+            rcon_reg <= rcon_reg + 1;
+          end if;
+        else
+          rcon_reg <= rcon_reg;
+        end if;
       end if;
     end if;
   end process;
@@ -51,10 +53,12 @@ architecture Behavioural of Control_FSM is
 -- State Register
   FSM_switchstate : process(clock, reset)
   begin
-    if reset = '1' then
-      curState <= sIdle;
-    elsif rising_edge(clock) then
-      curState <= nxtState;
+    if rising_edge(clock) then
+      if reset = '1' then
+        curState <= sIdle;
+      else
+        curState <= nxtState;
+      end if;
     -- else
     --  curState <= curState;
     end if;

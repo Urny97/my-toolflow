@@ -89,10 +89,10 @@ begin
 	
 	keyProc: process(reset, clock)
 	begin
-		if reset ='1' then
-			key_reg <= (others => '0');
-		else
-			if rising_edge(clock) then
+		if rising_edge(clock) then
+			if reset ='1' then
+				key_reg <= (others => '0');
+			else	
 				if ce = '1' then 
 					if done = '1' then
 						key_reg <= key_reg;

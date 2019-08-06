@@ -116,16 +116,18 @@ begin
   -- SB_reg
   SB_reg: process(clock, reset)
   begin
-    if reset = '1' then
-      reg_out_SB_in <= (others => '0');
-    elsif rising_edge(clock) then
-      if ce = '1' then
-        if clear_sign = '1' then
-          reg_out_SB_in <= (others => '0');
-        elsif done_sign = '1' then
-          reg_out_SB_in <= reg_out_SB_in;
-        else
-          reg_out_SB_in <= ARK_out_reg_in;
+    if rising_edge(clock) then
+      if reset = '1' then
+        reg_out_SB_in <= (others => '0');
+      else
+        if ce = '1' then
+          if clear_sign = '1' then
+            reg_out_SB_in <= (others => '0');
+          elsif done_sign = '1' then
+            reg_out_SB_in <= reg_out_SB_in;
+          else
+            reg_out_SB_in <= ARK_out_reg_in;
+          end if;
         end if;
       end if;
     end if;
