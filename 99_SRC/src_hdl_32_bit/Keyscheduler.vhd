@@ -89,17 +89,17 @@ begin
 	
 	keyProc: process(reset, clock)
 	begin
-		if reset ='1' then
-			key_reg <= (others => '0');
-		else
-			if rising_edge(clock) then
+		if rising_edge(clock) then			
+			if reset = '1' then
+				key_reg <= (others => '0');
+			else
 				if ce = '1' then 
 					if roundcounter < "0001" then 
 						key_reg <= key;
 					else 
 						key_reg <= roundkey;
 					end if;
-				end if;
+				end if;				
 			end if;
 		end if;
 	end process;

@@ -17,9 +17,9 @@ end Keyscheduler;
 
 architecture Behavioral of Keyscheduler is
 
-	component AES_Sbox_Canright is
-		port( a :in std_logic_vector( 7 downto 0 );
-				q :out std_logic_vector( 7 downto 0 )
+	component ByteSub is
+		port( BS_in :in std_logic_vector( 7 downto 0 );
+			  BS_out :out std_logic_vector( 7 downto 0 )
 	);
 	end component;
 	
@@ -40,8 +40,8 @@ begin
 	out_rotbytes(23 downto 16) <= key_reg(15 downto 8);
 	out_rotbytes(31 downto 24) <= key_reg(23 downto 16);
 	
-	gen_AES_Sbox_Canright_key: for i in 3 downto 0 generate
-	inst_AES_Sbox_Canright: component AES_Sbox_Canright
+	gen_ByteSub_key: for i in 3 downto 0 generate
+	inst_ByteSub: component ByteSub
 		port map(out_rotbytes(8*i+7 downto 8*i), out_BS_key(8*i+7 downto 8*i));
 	end generate;
 
@@ -89,10 +89,10 @@ begin
 	
 	keyProc: process(reset, clock)
 	begin
-		if reset ='1' then
-			key_reg <= (others => '0');
-		else
-			if rising_edge(clock) then
+		if rising_edge(clock) then
+			if reset ='1' then
+				key_reg <= (others => '0');
+			else	
 				if ce = '1' then 
 					if done = '1' then
 						key_reg <= key_reg;

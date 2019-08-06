@@ -50,7 +50,7 @@ module AES128(
 	shiftrow sr(.shiftrow_in(srIn), .shiftrow_out(srOut));
 	mixcolumn32 mc(.MC_in(data32), .MC_out(mcOut));
 	
-	always @(posedge clock or posedge reset)
+	always @(posedge clock)
 	begin
 		if (reset)
 		begin
@@ -65,8 +65,7 @@ module AES128(
 				if (!done)
 				begin
 					if (roundcounter > 11)
-						done = 1;
-					
+					done = 1;
 					counter = counter + 1;
 				end
 			end

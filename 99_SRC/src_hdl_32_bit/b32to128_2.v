@@ -15,7 +15,7 @@ module b32to128_2(
 	output reg [127:0] dataOut;
 	reg [95:0] tmp;
 	
-	always @(posedge clock or posedge reset)
+	always @(posedge clock)
 	if (reset)
 	begin
 		tmp = 0;

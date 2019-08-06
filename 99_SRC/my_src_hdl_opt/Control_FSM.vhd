@@ -8,8 +8,7 @@ entity Control_FSM is
     clock, reset, ce: in STD_LOGIC;
     roundcounter: out STD_LOGIC_VECTOR(3 downto 0);
     ARK_mux_sel: out STD_LOGIC_VECTOR(1 downto 0);
-    DO_mux_sel, done, clear, hold_data_out,
-    read_data_in: out STD_LOGIC
+    done, clear: out STD_LOGIC
   );
 end Control_FSM;
 
@@ -24,30 +23,29 @@ architecture Behavioural of Control_FSM is
 
   signal curState, nxtState: tStates;
   signal rcon_reg: STD_LOGIC_VECTOR(3 downto 0) := "0000";
-  signal done_sign, count_enable, clear_sign, hold_data_out_sign,
-  read_data_in_sign: STD_LOGIC;
+  signal done_sign, count_enable, clear_sign: STD_LOGIC;
 
   begin
     roundcounter <= rcon_reg;
     done <= done_sign;
     clear <= clear_sign;
-    hold_data_out <= hold_data_out_sign;
-    read_data_in <= read_data_in_sign;
 
 -- Increment Counter
   incr_ctr: process(clock, reset)
   begin
-    if reset = '1' then
-      rcon_reg <= "0000";
-    elsif rising_edge(clock) then
-      if ce = '1' and count_enable = '1' then
-        if rcon_reg = "1010" then
-          rcon_reg <= "0000";
-        else
-          rcon_reg <= rcon_reg + 1;
-        end if;
+    if rising_edge(clock) then
+      if reset = '1' then
+        rcon_reg <= "0000";
       else
-        rcon_reg <= rcon_reg;
+        if ce = '1' and count_enable = '1' then
+          if rcon_reg = "1010" then
+            rcon_reg <= "0000";
+          else
+            rcon_reg <= rcon_reg + 1;
+          end if;
+        else
+          rcon_reg <= rcon_reg;
+        end if;
       end if;
     end if;
   end process;
@@ -55,10 +53,12 @@ architecture Behavioural of Control_FSM is
 -- State Register
   FSM_switchstate : process(clock, reset)
   begin
-    if reset = '1' then
-      curState <= sIdle;
-    elsif rising_edge(clock) then
-      curState <= nxtState;
+    if rising_edge(clock) then
+      if reset = '1' then
+        curState <= sIdle;
+      else
+        curState <= nxtState;
+      end if;
     -- else
     --  curState <= curState;
     end if;
@@ -128,25 +128,20 @@ architecture Behavioural of Control_FSM is
   Control_out: process(curState)
   begin
     case curState is
-      when sIdle => DO_mux_sel <= '0'; ARK_mux_sel <= "00"; done_sign <= '0'; 
+      when sIdle => ARK_mux_sel <= "00"; done_sign <= '0'; 
                     clear_sign <= '1'; count_enable <= '0';
-                    hold_data_out_sign <= '0'; read_data_in_sign <= '0';
 
-      when sFirstRound => DO_mux_sel <= '0'; ARK_mux_sel <= "00"; done_sign <= '0';
-                          clear_sign <= '0'; count_enable <= '1'; 
-                          hold_data_out_sign <= '0'; read_data_in_sign <= '1';
+      when sFirstRound => ARK_mux_sel <= "00"; done_sign <= '0';
+                          clear_sign <= '0'; count_enable <= '1';
 
-      when sLoopUntil9 => DO_mux_sel <= '0'; ARK_mux_sel <= "01"; done_sign <= '0';
-                          clear_sign <= '0'; count_enable <= '1'; 
-                          hold_data_out_sign <= '0'; read_data_in_sign <= '0';
+      when sLoopUntil9 => ARK_mux_sel <= "01"; done_sign <= '0';
+                          clear_sign <= '0'; count_enable <= '1';
 
-      when sLastRound => DO_mux_sel <= '0'; ARK_mux_sel <= "01"; done_sign <= '0';
-                         clear_sign <= '0'; count_enable <= '1'; 
-                         hold_data_out_sign <= '1'; read_data_in_sign <= '0';
+      when sLastRound => ARK_mux_sel <= "01"; done_sign <= '0';
+                         clear_sign <= '0'; count_enable <= '1';
 
-      when sDone => DO_mux_sel <= '1'; ARK_mux_sel <= "11"; done_sign <= '1';
-                    clear_sign <= '0'; count_enable <= '0'; 
-                    hold_data_out_sign <= '0'; read_data_in_sign <= '0';
+      when sDone => ARK_mux_sel <= "11"; done_sign <= '1';
+                    clear_sign <= '0'; count_enable <= '0';
     end case;
   end process;
 
