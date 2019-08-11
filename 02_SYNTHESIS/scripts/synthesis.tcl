@@ -209,8 +209,10 @@ set compile_filter_prune_seq_cells false
 # ------------------------------------------------------------------------------
 # Compile the design
 # ------------------------------------------------------------------------------
-#set_operand_isolation_style -logic adaptive -verbose
 #set do_operand_isolation true
+#set_operand_isolation_style \
+-logic adaptive \
+-verbose \
 # Ultimate compile (does more and longer optimizations to gain an extra 10% at the cost of a factor 2 (at least) computation time)
 #compile_ultra -no_autoungroup
 #compile_ultra 
@@ -219,7 +221,8 @@ set compile_filter_prune_seq_cells false
 compile 
 #-gate_clock
 
-#optimize_register
+#Re-timing
+#optimize_register 
 
 # ------------------------------------------------------------------------------
 # Change names before output

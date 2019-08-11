@@ -6,8 +6,8 @@ use ieee.std_logic_textio.all;
 
 package PKG_AES128 is
 
-  constant C_SIM_CLKPERIOD : time := 10 ns;
-  constant C_SIM_MINCLKPERIODTOFINISH : time := 20 * C_SIM_CLKPERIOD;
+  constant C_SIM_CLKPERIOD : time := 50 ns;
+  constant C_SIM_MINCLKPERIODTOFINISH : time := 50 * C_SIM_CLKPERIOD;
 
   type T_TV is record
     input : STD_LOGIC_VECTOR(127 downto 0);
