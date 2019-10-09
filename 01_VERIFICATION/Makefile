@@ -23,7 +23,7 @@ vcd_dump_dir = /tmp/arne-vcd
 # define the simulator
 simulator = vcs
 # define simulator options
-simulator_flags = -full64 -timescale=1ns/10ps -debug_acc+all -debug_region+cell+encrypt
+simulator_flags = -full64 -timescale=1ns/1ps -debug_acc+all -debug_region+cell+encrypt
 # define additional directives that are used to set options in the test_bench at compile time
 # Using DUMP_VCD allows to based power estimations on actual signal activity => more accurate simulations
 # However VCD files consume a lot of diskspace and should therefore only be made on the local volume1 of the machine you are using.

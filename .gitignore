@@ -13,6 +13,10 @@
 /01_VERIFICATION/testreport.txt
 /01_VERIFICATION/.vlogansetup.args
 /01_VERIFICATION/AN.DB/
+/01_VERIFICATION/DVEfiles/
+/01_VERIFICATION/.nfs*
+/01_VERIFICATION/.syn*
+/01_VERIFICATION/.restartSimSession.tcl.old
 /02_SYNTHESIS/work/
 /02_SYNTHESIS/logs/
 /02_SYNTHESIS/data/
