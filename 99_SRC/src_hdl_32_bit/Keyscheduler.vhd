@@ -23,7 +23,7 @@ architecture Behavioral of Keyscheduler is
 	end component;
 	
 	signal roundkey: std_logic_vector(127 downto 0);
-	signal key_reg: std_logic_vector(127 downto 0);
+	signal key_reg, nextKey: std_logic_vector(127 downto 0);
 	signal out_rotbytes, out_BS_key, out_rcon: std_logic_vector(31 downto 0);
 	signal rcon: std_logic_vector(7 downto 0);
 	signal address : std_logic_vector(5 downto 0);
@@ -87,6 +87,8 @@ begin
 	roundkey(63 downto 32) <= roundkey(95 downto 64) xor key_reg(63 downto 32);
 	roundkey(31 downto 0) <= roundkey(63 downto 32) xor key_reg(31 downto 0);
 	
+	nextKey <= key when roundcounter = "0000" else roundkey;
+
 	keyProc: process(reset, clock)
 	begin
 		if rising_edge(clock) then			
@@ -94,11 +96,13 @@ begin
 				key_reg <= (others => '0');
 			else
 				if ce = '1' then 
-					if roundcounter < "0001" then 
-						key_reg <= key;
-					else 
-						key_reg <= roundkey;
-					end if;
+					key_reg <= nextKey;
+
+					-- if roundcounter = "0001" then 
+					--	key_reg <= key;
+					--else 
+					--	key_reg <= roundkey;
+					--end if;
 				end if;				
 			end if;
 		end if;

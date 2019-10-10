@@ -167,6 +167,7 @@ begin
     wait for clock_period*10;
     
     -- T8: 2 TestVectors consecutive on nominal operation
+    wait for clock_period/2;
     testnumber <= 8;
     data_in <= x"3243f6a8885a308d313198a2e0370734";
     key <= x"2b7e151628aed2a6abf7158809cf4f3c";

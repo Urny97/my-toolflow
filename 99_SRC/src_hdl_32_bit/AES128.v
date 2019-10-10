@@ -44,7 +44,7 @@ module AES128(
 	b128to32   key32c (.dataIn(keOut),                                  .nr(stepcounter), .dataOut(keOut32));
 	b32to128_2 sr128c (.dataIn((roundcounter >= 11) ? arkOut : sbOut),  .nr(stepcounter), .dataOut(srIn), .clock(clock), .reset(reset), .enable(!done & ce));
 	
-	Keyscheduler ke(.clock(clock), .reset(reset), .ce(ce & (stepcounter == 3)), .roundcounter(roundcounter), .key(key), .key_out(keOut));
+	Keyscheduler ke(.clock(clock), .reset(reset), .ce(ce & (stepcounter == 2'b11)), .roundcounter(roundcounter), .key(key), .key_out(keOut));
 	AddRoundKey32 ark(.dataIn(arkIn), .keyIn(keOut32), .dataOut(arkOut));
 	subbytes32 sb(.data_in(arkOut), .data_out(sbOut));
 	shiftrow sr(.shiftrow_in(srIn), .shiftrow_out(srOut));
@@ -55,7 +55,7 @@ module AES128(
 		if (reset)
 		begin
 			done = 0;
-			counter = 6'h3;
+			counter = 6'h2;
 		end
 		else
 		begin
