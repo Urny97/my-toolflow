@@ -33,18 +33,24 @@ module AES128(
 	
 	wire [127:0] srIn;
 	wire [127:0] srOut;
+	wire [127:0] keySch;
+	
 	
 	wire [31:0] mcOut;
 	
 	assign data_out = srIn;
-	assign data  = (roundcounter <= 1) ? data_in : srOut;
-	assign arkIn = (roundcounter > 1 && roundcounter < 11) ? mcOut : data32;
+	assign data  = (roundcounter < 1) ? data_in : srOut;
+	assign keySch  = (roundcounter < 1) ? key : keOut;
+	
+	//assign arkIn = (roundcounter >= 1 && roundcounter < 11) ? mcOut : data32;
+	assign arkIn = (roundcounter >= 1 && roundcounter < 10) ? mcOut : data32;
 	
 	b128to32   data32c(.dataIn(data),                                   .nr(stepcounter), .dataOut(data32));
 	b128to32   key32c (.dataIn(keOut),                                  .nr(stepcounter), .dataOut(keOut32));
-	b32to128_2 sr128c (.dataIn((roundcounter >= 11) ? arkOut : sbOut),  .nr(stepcounter), .dataOut(srIn), .clock(clock), .reset(reset), .enable(!done & ce));
+	b32to128_2 sr128c (.dataIn((roundcounter >= 10) ? arkOut : sbOut),  .nr(stepcounter), .dataOut(srIn), .clock(clock), .reset(reset), .enable(!done & ce));
 	
-	Keyscheduler ke(.clock(clock), .reset(reset), .ce(ce & (stepcounter == 2'b11)), .roundcounter(roundcounter), .key(key), .key_out(keOut));
+	Keyscheduler ke(.clock(clock), .reset(reset), .ce(ce & (stepcounter == 2'b11)), .roundcounter(roundcounter), .key(keySch), .key_out(keOut));
+
 	AddRoundKey32 ark(.dataIn(arkIn), .keyIn(keOut32), .dataOut(arkOut));
 	subbytes32 sb(.data_in(arkOut), .data_out(sbOut));
 	shiftrow sr(.shiftrow_in(srIn), .shiftrow_out(srOut));
@@ -54,29 +60,35 @@ module AES128(
 	begin
 		if (reset)
 		begin
-			done = 0;
-			counter = 6'h2;
+			done = 1;
+			counter = 6'd44;
 		end
 		else
 		begin
 			if (ce)
 			begin
 				//counters
-				if (!done)
+				//if (!done)
+				//begin
+				if (roundcounter >= 11) 
 				begin
-					if (roundcounter > 11)
 					done = 1;
+					counter = 6'h0;
+				end
+				else
+				begin
+					done = 0; 
 					counter = counter + 1;
 				end
 			end
-			else
-			begin
-				if (done)
-				begin
-					done = 0;
-					counter = 6'h3;
-				end
-			end
+			// else
+			// begin
+			// 	if (done)
+			// 	begin
+			// 		done = 1;
+			// 		counter = 6'h0;
+			// 	end
+			// end
 		end
 	end
 endmodule
