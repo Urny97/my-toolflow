@@ -152,7 +152,7 @@ begin
     wait for C_SIM_MINCLKPERIODTOFINISH-clock_period*2;
     if(done /= '1') then testreport(testnumber) <= testreport(testnumber) + 4; end if;
     ce <= '0';
-    wait for clock_period*20;
+    wait for clock_period*20.5;
     
     -- T7: TestVector on nominal operation
     testnumber <= 7;
@@ -175,7 +175,7 @@ begin
     wait until done = '1';
     wait for clock_period/2;
     if(data_out /= x"3925841d02dc09fbdc118597196a0b32") then testreport(testnumber) <= testreport(testnumber) + 1; end if;
-	 wait for clock_period;
+	 wait for clock_period/2;
     ce <= '0';
     wait for clock_period*10;
     
@@ -191,7 +191,7 @@ begin
     wait until done = '1';
     wait for clock_period/2;
     if(data_out /= x"3925841d02dc09fbdc118597196a0b32") then testreport(testnumber) <= testreport(testnumber) + 4; end if;
-	 wait for clock_period;
+	wait for clock_period/2;
     ce <= '0';
     wait for clock_period*10;
     
@@ -203,14 +203,14 @@ begin
     wait until done = '1';
     wait for clock_period/2;
     if(data_out /= x"3925841d02dc09fbdc118597196a0b32") then testreport(testnumber) <= testreport(testnumber) + 1; end if;
-    wait for clock_period;
+    wait for clock_period/2;
 	 ce <= '0';
     wait for clock_period;
     ce <= '1';
     wait until done = '1';
     wait for clock_period/2;
     if(data_out /= x"3925841d02dc09fbdc118597196a0b32") then testreport(testnumber) <= testreport(testnumber) + 2; end if;
-	 wait for clock_period;
+	 wait for clock_period/2;
     ce <= '0';
     wait for clock_period*10;
     
