@@ -152,7 +152,7 @@ begin
     wait for C_SIM_MINCLKPERIODTOFINISH-clock_period*2;
     if(done /= '1') then testreport(testnumber) <= testreport(testnumber) + 4; end if;
     ce <= '0';
-    wait for clock_period*20.5;
+    wait for clock_period*20;
     
     -- T7: TestVector on nominal operation
     testnumber <= 7;

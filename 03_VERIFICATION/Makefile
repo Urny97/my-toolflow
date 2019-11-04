@@ -23,11 +23,13 @@ vhdl = TRUE
 # Direct this path to a directory that has "unlimited" disk space
 # Typically this would be a temp dir on the machine you are using
 # This should match the vcd_dump_dir variable defined in the setup.tcl in the 04_POWER section!!!!! 
-#vcd_dump_dir = /tmp/vcd_dump
+vcd_dump_dir = /tmp/arne-vcd
 # define the simulator
 simulator = vcs
+
 # define simulator options
-simulator_flags = -full64 -timescale=1ns/1ps -debug_all +vcs+lic+wait +vc+list -negdelay +notimingcheck -sdf max:AES128_tb/DUT:../02_SYNTHESIS/data/AES128.synthesis.sdf
+simulator_flags = -full64 -timescale=1ns/1ps -debug_acc+all -debug_region+cell+encrypt +vcs+lic+wait +vc+list -negdelay -sdf max:AES128_tb/DUT:../02_SYNTHESIS/data/AES128.synthesis.sdf
+
 # define additional directives that are used to set options in the test_bench at compile time
 # Using DUMP_VCD allows to based power estimations on actual signal activity => more accurate simulations
 # However VCD files consume a lot of diskspace and should therefore only be made on the local volume1 of the machine you are using.

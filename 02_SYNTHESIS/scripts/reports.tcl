@@ -49,7 +49,7 @@ while {[gets $fr line] >= 0} {
 close $fr
 close $fw
 
-report_operand_isolation > \
+#report_operand_isolation > \
   ../reports/synthesis/${rm_project_top}.operand_isolation
 
 report_timing -loops > \

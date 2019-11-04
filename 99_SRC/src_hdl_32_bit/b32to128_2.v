@@ -23,27 +23,27 @@ module b32to128_2(
 	end
 	else
 	begin
-		// if (enable)
-		// begin
-		// 	if (nr == 2'h0)
-		// 		tmp[95:64] = dataIn;
-		// 	else if (nr == 2'h1)
-		// 		tmp[63:32] = dataIn;
-		// 	else if (nr == 2'h2)
-		// 		tmp[31:0] = dataIn;
-		// 	else if (nr == 2'h3)
-		// 		dataOut = {tmp, dataIn};
-		// end
 		if (enable)
 		begin
-			if (nr == 2'h1)
-				tmp[95:64] = dataIn;
-			else if (nr == 2'h2)
-				tmp[63:32] = dataIn;
-			else if (nr == 2'h3)
-				tmp[31:0] = dataIn;
-			else if (nr == 2'h0)
-				dataOut = {tmp, dataIn};
+			if (nr == 2'h0)
+		 		tmp[95:64] = dataIn;
+		 	else if (nr == 2'h1)
+		 		tmp[63:32] = dataIn;
+		 	else if (nr == 2'h2)
+		 		tmp[31:0] = dataIn;
+		 	else if (nr == 2'h3)
+		 		dataOut = {tmp, dataIn};
 		end
+		//if (enable)
+		//begin
+		//	if (nr == 2'h1)
+		//		tmp[95:64] = dataIn;
+		//	else if (nr == 2'h2)
+		//		tmp[63:32] = dataIn;
+		//	else if (nr == 2'h3)
+		//		tmp[31:0] = dataIn;
+		//	else if (nr == 2'h0)
+		//		dataOut = {tmp, dataIn};
+		//end
 	end
 endmodule

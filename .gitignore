@@ -17,11 +17,13 @@
 /01_VERIFICATION/.nfs*
 /01_VERIFICATION/.syn*
 /01_VERIFICATION/.restartSimSession.tcl.old
+01_VERIFICATION/testreport.txt
 /02_SYNTHESIS/work/
 /02_SYNTHESIS/logs/
 /02_SYNTHESIS/data/
 /02_SYNTHESIS/lec/
 /02_SYNTHESIS/reports/
+/02_SYNTHESIS/scripts/design_config.tcl
 vivado*
 01_VERIFICATION/csrc/
 01_VERIFICATION/simv
@@ -54,8 +56,10 @@ vivado*
 03_VERIFICATION_Genus/ucli.key
 03_VERIFICATION_Genus/verilog_file_list
 03_VERIFICATION_Genus/vhdl_file_list
+03_VERIFICATION/testreport.txt
 04_POWER/logs/
 04_POWER/reports/
 04_POWER/work/
 command.log
 filenames.log
+99_SRC/src_hdl_32_bit/PKG_AES128.vhd

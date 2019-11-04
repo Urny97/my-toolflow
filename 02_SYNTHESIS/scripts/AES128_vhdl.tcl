@@ -59,11 +59,10 @@ set search_path [ concat $search_path $proj_vhdl ]
     				]
 
 set vhdl_files [ list \
+				        		AES128.v \
 				        		AddRoundKey32.v \
-		                        AES128.v \
 		                        subbytes32.v \
 		                        bytesub.vhd \
-		                        Control_FSM.vhd \
 		                        Keyscheduler.vhd \
 		                        mixcolumn32.vhd \
 		                        shiftrow.vhd \

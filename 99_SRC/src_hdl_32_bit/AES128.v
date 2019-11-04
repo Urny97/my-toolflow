@@ -49,7 +49,7 @@ module AES128(
 	b128to32   key32c (.dataIn(keOut),                                  .nr(stepcounter), .dataOut(keOut32));
 	b32to128_2 sr128c (.dataIn((roundcounter >= 10) ? arkOut : sbOut),  .nr(stepcounter), .dataOut(srIn), .clock(clock), .reset(reset), .enable(!done & ce));
 	
-	Keyscheduler ke(.clock(clock), .reset(reset), .ce(ce & (stepcounter == 2'b00)), .roundcounter(roundcounter), .key(keySch), .key_out(keOut));
+	Keyscheduler ke(.clock(clock), .reset(reset), .ce(ce & (stepcounter == 2'b11)), .roundcounter(roundcounter), .key(keySch), .key_out(keOut));
 
 	AddRoundKey32 ark(.dataIn(arkIn), .keyIn(keOut32), .dataOut(arkOut));
 	subbytes32 sb(.data_in(arkOut), .data_out(sbOut));
@@ -75,9 +75,6 @@ module AES128(
 		begin
 			if (ce)
 			begin
-				//counters
-				//if (!done)
-				//begin
 				if (done)
 				begin
 					counter = counter;
@@ -93,16 +90,10 @@ module AES128(
 				end
 			end
 			else
+			begin
 				done = 0;
 				counter = counter;
-			// else
-			// begin
-			// 	if (done)
-			// 	begin
-			// 		done = 1;
-			// 		counter = 6'h0;
-			// 	end
-			// end
+			end
 		end
 	end
 endmodule

@@ -71,13 +71,20 @@ define_design_lib work -path elab
 source ../scripts/${rm_project_top}_vhdl.tcl
 
 # Tee analyze output to separate log file
-redirect -tee ../reports/synthesis/${rm_project_top}.analyze_vhdl { \
+#redirect -tee ../reports/synthesis/${rm_project_top}.analyze_vhdl { \
   analyze -format vhdl $vhdl_image }
 
 # Tee elaboration output to separate log file
-redirect -tee ../reports/synthesis/${rm_project_top}.elaborate { \
+#redirect -tee ../reports/synthesis/${rm_project_top}.elaborate { \
   elaborate -architecture Behavioral ${rm_project_top}}
 
+## With verilog files
+redirect -tee ../reports/synthesis/${rm_project_top}.analyze_vhdl { \
+  analyze -autoread $vhdl_image }
+
+redirect -tee ../reports/synthesis/${rm_project_top}.elaborate { \
+  elaborate -architecture verilog ${rm_project_top}}
+##
 
 write -hierarchy -format ddc \
       -output ../data/${rm_project_top}.synthesis-unmapped.ddc
