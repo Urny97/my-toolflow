@@ -35,7 +35,7 @@ set input_ports			[list data_in \
 # Clock timing
 # -----------------------------------------------------------------------------
 
-set clock_period				6.6;									# Target clock period for the system clock
+set clock_period				11.6;									# Target clock period for the system clock
 set clock_period_jitter			0.05;									# Cycle jitter (rise-to-rise) +/- N ns
                                                 						# of the whole cycle
 set clock_dutycycle_jitter		[expr $clock_period * 0.05 ];

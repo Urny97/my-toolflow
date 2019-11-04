@@ -9,6 +9,7 @@ base_dir = $(abspath ..)
 #src_dir = $(abspath ../99_SRC/my_src_hdl)
 #src_dir = $(abspath ../99_SRC/my_src_hdl_opt)
 src_dir = $(abspath ../99_SRC/src_hdl_32_bit)
+#src_dir = $(abspath ../99_SRC/src_hdl_32_bit)
 test_dir = $(abspath ../99_SRC/test_benches)
 #test_bench = AES128_simple_tb
 test_bench = AES128_tb
