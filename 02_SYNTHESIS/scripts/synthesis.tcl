@@ -216,15 +216,18 @@ set compile_filter_prune_seq_cells false
 # ------------------------------------------------------------------------------
 # Compile the design
 # ------------------------------------------------------------------------------
+## Operand Isolation
 #set do_operand_isolation true
-# Ultimate compile (does more and longer optimizations to gain an extra 10% at the cost of a factor 2 (at least) computation time)
+
+## Ultimate compile (does more and longer optimizations to gain an extra 10% at the cost of a factor 2 (at least) computation time)
 #compile_ultra -no_autoungroup
 #compile_ultra 
 
-# Normal (faster compile)
-compile -gate_clock
+## Normal (faster compile)
+compile 
+#-gate_clock
 
-#Re-timing
+## Re-timing
 #optimize_register 
 
 # ------------------------------------------------------------------------------

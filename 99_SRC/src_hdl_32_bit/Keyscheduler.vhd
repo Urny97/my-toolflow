@@ -18,7 +18,7 @@ architecture Behavioral of Keyscheduler is
 
 	component ByteSub is
 		port( BS_in :in std_logic_vector( 7 downto 0 );
-				BS_out :out std_logic_vector( 7 downto 0 )
+			  BS_out :out std_logic_vector( 7 downto 0 )
 	);
 	end component;
 	
@@ -70,40 +70,6 @@ begin
 				rcon <= "00000000";
 		end case;
 	end process;
-
-	--p_rcon: process(roundcounter)
-	--begin
-	--	case roundcounter is
-	--		when "0000" =>
-	--			rcon <= "00000000";
-	--		when "0001" =>
-	--			rcon <= "00000001";
-	--		when "0010" =>
-	--			rcon <= "00000010";
-	--		when "0011" =>
-	--			rcon <= "00000100";
-	--		when "0100" =>
-	--			rcon <= "00001000";
-	--		when "0101" =>
-	--			rcon <= "00010000";
-	--		when "0110" =>
-	--			rcon <= "00100000";
-	--		when "0111" =>
-	--			rcon <= "01000000";
-	--		when "1000" =>
-	--			rcon <= "10000000";
-	--		when "1001" =>
-	--			rcon <= "00011011";
-	--		when "1010" =>
-	--			rcon <= "00110110";
-	--		when "1011" =>
-	--			rcon <= "00000000";
-	--		when "1100" =>
-	--			rcon <= "00000000";
-	--		when others =>
-	--			rcon <= "00000000";
-	--	end case;
-	--end process;
 		
 	out_rcon(31 downto 24) <= rcon xor out_BS_key(31 downto 24);
 	out_rcon(23 downto 0) <= out_BS_key(23 downto 0);
@@ -112,29 +78,41 @@ begin
 	roundkey(95 downto 64) <= roundkey(127 downto 96) xor key(95 downto 64);
 	roundkey(63 downto 32) <= roundkey(95 downto 64) xor key(63 downto 32);
 	roundkey(31 downto 0) <= roundkey(63 downto 32) xor key(31 downto 0);
-	
-	--nextKey <= key when roundcounter = "0000" else roundkey;
 
-	keySch <= key when roundcounter = "0000" else key_reg;
-	key_out <= keySch;
+	--key_reg <= key when roundcounter = "0000" else nextKey;
+	--keySch <= key_reg;
+	--key_out <= keySch;
+
+	--keyProc: process(reset, clock)
+	--begin
+	--	if rising_edge(clock) then			
+	--		if reset = '1' then
+	--			nextKey <= (others => '0');
+	--		else
+	--			if ce = '1' then 
+	--				nextKey <= roundkey;
+	--			end if;				
+	--		end if;
+	--	end if;
+	--end process;
+
+	keySch <= key_reg;
 
 	keyProc: process(reset, clock)
 	begin
-		if rising_edge(clock) then			
-			if reset = '1' then
-				key_reg <= (others => '0');
-			else
-				if ce = '1' then 
-					key_reg <= roundkey;
-
-					-- if roundcounter = "0001" then 
-					--	key_reg <= key;
-					--else 
-					--	key_reg <= roundkey;
-					--end if;
-				end if;				
-			end if;
-		end if;
+	  if rising_edge(clock) then
+	    if reset = '1' then
+	      key_reg <= (others => '0');
+	    else
+	      if ce = '1' then
+	        if roundcounter = "0000" then
+	          key_reg <= key;
+	        else
+	          key_reg <= roundkey;
+	        end if;
+	      end if;
+	    end if;
+	  end if;
 	end process;
 	
 end Behavioral;
