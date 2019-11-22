@@ -61,10 +61,10 @@ begin
     wait for clock_period*30;
     
     -- TestVector on nominal operation
-    data_in <= x"3243f6a8885a308d313198a2e0370734";
-    --data_in <= x"54776F204F6E65204E696E652054776F";
-    key <= x"2b7e151628aed2a6abf7158809cf4f3c";
-    --key <= x"5468617473206D79204B756E67204675";
+    --data_in <= x"3243f6a8885a308d313198a2e0370734";
+    data_in <= x"54776F204F6E65204E696E652054776F";
+    --key <= x"2b7e151628aed2a6abf7158809cf4f3c";
+    key <= x"5468617473206D79204B756E67204675";
     wait for clock_period;
     ce <= '1';
     wait until done = '1';
